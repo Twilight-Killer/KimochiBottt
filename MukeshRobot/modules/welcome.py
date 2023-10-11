@@ -260,20 +260,20 @@ def new_member(update: Update, context: CallbackContext):
                 if not MukeshRobot.ALLOW_CHATS:
                     with suppress(BadRequest):
                         update.effective_message.reply_text(
-                            f"ɢʀᴏᴜᴘ ᴀʀᴇ ᴅɪsᴀʙʟᴇᴅ ғᴏʀ {bot.first_name}, ɪ'ᴍ ʙᴜsʏ."
+                            f" {bot.first_name}, ꜱᴀʏᴀ ꜱɪʙᴜᴋ."
                         )
                     bot.leave_chat(update.effective_chat.id)
                     return
                 bot.send_message(
                     EVENT_LOGS,
-                    "#ɴᴇᴡ_ɢʀᴏᴜᴘ\n<b>ɢʀᴏᴜᴘ ɴᴀᴍᴇ :</b> {}\n<b>ᴄʜᴀᴛ ɪᴅ:</b> <code>{}</code> ".format(
+                    "#ɢʀᴜᴘ ʙᴀʀᴜ\n<b>ɴᴀᴍᴀ ɢʀᴜᴘ :</b> {}\n<b>ɪᴅ ɢʀᴜᴘ:</b> <code>{}</code> ".format(
                         html.escape(chat.title),
                         chat.id,
                     ),
                     parse_mode=ParseMode.HTML,
                 )
                 update.effective_message.reply_text(
-                    "Watashi ga kita !", reply_to_message_id=reply
+                    "ᴛʜᴀɴᴋꜱ ꜰᴏʀ ᴀᴅᴅ ᴍᴇ", reply_to_message_id=reply
                 )
                 continue
 
