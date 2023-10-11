@@ -46,7 +46,7 @@ async def restart(client, m: Message):
     await accha.delete()
     await asyncio.sleep(0.3)
     umm = await m.reply_sticker(
-        "CAACAgUAAxkDAAJHbmLuy2NEfrfh6lZSohacEGrVjd5wAAIOBAACl42QVKnra4sdzC_uKQQ"
+        "CAACAgUAAx0CWvaI6gACQSdlJkRGoTHMbJvMgK5Vb0GgeGnxOAACZgYAAsb5qFWqFY5ob9O-czAE"
     )
     await umm.delete()
     await asyncio.sleep(0.2)
@@ -54,7 +54,7 @@ async def restart(client, m: Message):
         START_IMG,
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
    ━━━━━━━━━━━━━━━━━━━
-  » **ᴍʏ ᴏᴡɴᴇʀ :** [ᴏᴡɴᴇʀ](tg://user?id={OWNER_ID})
+  » **ᴍʏ ᴏᴡɴᴇʀ :** [ᴅᴀʀᴋɪᴇᴢ](tg://user?id={OWNER_ID})
   
   » **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{lver}`
   
