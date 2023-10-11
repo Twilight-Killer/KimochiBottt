@@ -260,7 +260,7 @@ def new_member(update: Update, context: CallbackContext):
                 if not MukeshRobot.ALLOW_CHATS:
                     with suppress(BadRequest):
                         update.effective_message.reply_text(
-                            f" {bot.first_name}, ꜱᴀʏᴀ ꜱɪʙᴜᴋ."
+                            f"ꜱᴀʏᴀ {bot.first_name} ʟᴀɢɪ ꜱɪʙᴜᴋ, ʜᴜʙᴜɴɢɪ ᴘᴇᴍɪʟɪᴋ ʙᴏᴛ ᴊɪᴋᴀ ɪɴɢɪɴ ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ꜱᴀʏᴀ."
                         )
                     bot.leave_chat(update.effective_chat.id)
                     return
