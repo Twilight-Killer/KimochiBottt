@@ -124,7 +124,7 @@ async def job_close():
 
 
 # Run everyday at 12am
-scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")
+scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
 scheduler.add_job(job_close, trigger="cron", hour=23, minute=59)
 scheduler.start()
 
@@ -149,7 +149,7 @@ async def job_open():
 
 
 # Run everyday at 06
-scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")
+scheduler = AsyncIOScheduler(timezone="Asia/Jakarta")
 scheduler.add_job(job_open, trigger="cron", hour=6, minute=1)
 scheduler.start()
 
