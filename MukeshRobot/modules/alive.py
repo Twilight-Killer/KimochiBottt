@@ -19,7 +19,7 @@ PHOTO = [
 
 Mukesh = [
     [
-        InlineKeyboardButton(text="ɴᴏᴏʙ", user_id=OWNER_ID),
+        InlineKeyboardButton(text="ᴏᴏʙ", user_id=OWNER_ID),
         InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
@@ -49,7 +49,7 @@ async def restart(client, m: Message):
         "CAACAgUAAx0CWvaI6gACQSdlJkRGoTHMbJvMgK5Vb0GgeGnxOAACZgYAAsb5qFWqFY5ob9O-czAE"
     )
     await umm.delete()
-    await asyncio.sleep(0.2)
+    await asyncio.sleep(0.9)
     await m.reply_photo(
         START_IMG,
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
