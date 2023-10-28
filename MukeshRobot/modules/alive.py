@@ -37,11 +37,11 @@ async def restart(client, m: Message):
     await m.delete()
     accha = await m.reply("⚡")
     await asyncio.sleep(0.2)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ..")
+    await accha.edit("🥳")
     await asyncio.sleep(0.1)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ......")
+    await accha.edit("🎊")
     await asyncio.sleep(0.1)
-    await accha.edit("ᴅɪɴɢ ᴅᴏɴɢ ꨄ︎ ᴀʟɪᴠɪɴɢ..")
+    await accha.edit("🎉")
 
     await accha.delete()
     await asyncio.sleep(0.3)
@@ -49,7 +49,7 @@ async def restart(client, m: Message):
         "CAACAgUAAx0CWvaI6gACQSdlJkRGoTHMbJvMgK5Vb0GgeGnxOAACZgYAAsb5qFWqFY5ob9O-czAE"
     )
     await umm.delete()
-    await asyncio.sleep(0.9)
+    await asyncio.sleep(0.2)
     await m.reply_photo(
         START_IMG,
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
