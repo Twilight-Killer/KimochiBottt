@@ -97,7 +97,7 @@ def report(update: Update, context: CallbackContext) -> str:
 
         if chat.username and chat.type == Chat.SUPERGROUP:
 
-            reported = f"{mention_html(user.id, user.first_name)} reported {mention_html(reported_user.id, reported_user.first_name)} to the admins!"
+            reported = f"{mention_html(user.id, user.first_name)} dilaporkan {mention_html(reported_user.id, reported_user.first_name)} ke admin!"
 
             msg = (
                 f"<b>⚠️ Report: </b>{html.escape(chat.title)}\n"
