@@ -147,12 +147,12 @@ def get_id(update: Update, context: CallbackContext):
 
         if chat.type == "private":
             msg.reply_text(
-                f"ʏᴏᴜʀ ᴜsᴇʀ ɪᴅ ɪs <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
+                f"ʏᴏᴜʀ ᴜsᴇʀ ɪᴅ <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
             )
 
         else:
             msg.reply_text(
-                f"ᴛʜɪs ɢʀᴏᴜᴩ's ɪᴅ ɪs <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
+                f"ɢʀᴏᴜᴩ ɪᴅ <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
             )
 
 
@@ -285,7 +285,7 @@ def info(update: Update, context: CallbackContext):
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' \n[<a href="https://t.me/haotogel_result/12012">ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴋɴᴏᴡ ᴡʜᴀᴛ ɪs ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟs.</a>]'.format(
+        text += ' \n[<a href="https://t.me/haotogel_result/12012">ᴄʟɪᴄᴋ ʜᴇʀᴇ.</a>]'.format(
             bot.username
         )
 
