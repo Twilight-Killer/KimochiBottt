@@ -70,7 +70,7 @@ def list_handlers(update, context):
 
     if not all_handlers:
         send_message(
-            update.effective_message, "No filters saved in {}!".format(chat_name)
+            update.effective_message, "Tidak ada filter yang disimpan‌‌ {}!".format(chat_name)
         )
         return
 
@@ -245,7 +245,7 @@ def stop_filter(update, context):
     chat_filters = sql.get_chat_triggers(chat_id)
 
     if not chat_filters:
-        send_message(update.effective_message, "No filters active here!")
+        send_message(update.effective_message, "Tidak ada filter yang aktif di sini!‌‌")
         return
 
     for keyword in chat_filters:
