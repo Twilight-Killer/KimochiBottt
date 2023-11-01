@@ -99,9 +99,9 @@ def warn(
         else:  # ban
             chat.kick_member(user.id)
             reply = (
-                f"<code>❕</code><b>Ban Event</b>\n"
+                f"<code>🚷</code><b>Diblokir</b>\n"
                 f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
-                f"<code> </code><b>•  Count:</b> {limit}"
+                f"<code> </code><b>•  Jumlah:</b> {limit}"
             )
 
         for warn_reason in reasons:
@@ -123,7 +123,7 @@ def warn(
             [
                 [
                     InlineKeyboardButton(
-                        "✨ ʀᴇᴍᴏᴠᴇ ✨",
+                        "✨ ʜᴀᴘᴜꜱ ✨",
                         callback_data="rm_warn({})".format(user.id),
                     ),
                 ],
@@ -131,12 +131,12 @@ def warn(
         )
 
         reply = (
-            f"<code>❕</code><b>Warn Event</b>\n"
+            f"<code>⚠️</code><b>Peringatan</b>\n"
             f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
-            f"<code> </code><b>•  Count:</b> {num_warns}/{limit}"
+            f"<code> </code><b>•  Jumlah:</b> {num_warns}/{limit}"
         )
         if reason:
-            reply += f"\n<code> </code><b>•  Reason:</b> {html.escape(reason)}"
+            reply += f"\n<code> </code><b>•  Alasan:</b> {html.escape(reason)}"
 
         log_reason = (
             f"<b>{html.escape(chat.title)}:</b>\n"
@@ -176,7 +176,7 @@ def button(update: Update, context: CallbackContext) -> str:
         res = sql.remove_warn(user_id, chat.id)
         if res:
             update.effective_message.edit_text(
-                "Warn removed by {}.".format(mention_html(user.id, user.first_name)),
+                "peringatan dihapus oleh‌‌ {}.".format(mention_html(user.id, user.first_name)),
                 parse_mode=ParseMode.HTML,
             )
             user_member = chat.get_member(user_id)
@@ -239,7 +239,7 @@ def reset_warns(update: Update, context: CallbackContext) -> str:
 
     if user_id:
         sql.reset_warns(user_id, chat.id)
-        message.reply_text("Warns have been reset!")
+        message.reply_text("Peringatan telah di reset!")
         warned = chat.get_member(user_id).user
         return (
             f"<b>{html.escape(chat.title)}:</b>\n"
