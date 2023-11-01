@@ -4,14 +4,14 @@ class Config(object):
     # REQUIRED
     # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    API_ID = "" # integer value, dont use ""
-    API_HASH = ""
+    API_ID = "15672532" # integer value, dont use ""
+    API_HASH = "4827d34e2c376fd3cc5a21db22e76ceb"
     TOKEN = ""  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
     OWNER_ID = 1128130156 # If you dont know, run the bot and do /id in your private chat with it, also an integer
     
     SUPPORT_CHAT = "wibuAnim3"  # Your own group for support, do not add the @
     START_IMG = "https://telegra.ph/file/c28fca8e18d76ca6768fb.jpg"
-    EVENT_LOGS = ()  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
+    EVENT_LOGS = (-1001526106346)  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
     MONGO_DB_URI= ""
     # RECOMMENDED
     DATABASE_URL = ""  # A sql database url from elephantsql.com
