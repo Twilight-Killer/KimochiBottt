@@ -254,7 +254,7 @@ def gban(update: Update, context: CallbackContext):
         gban_time = round((gban_time / 60), 2)
         message.reply_text("Global Banned Done! User diblokir di semua grup.", parse_mode=ParseMode.HTML)
     else:
-        message.reply_text("Global Banned Done! User diblokir disemua grup.", parse_mode=ParseMode.HTML)
+        message.reply_text("Global Banned Done! User diblokir di semua grup.", parse_mode=ParseMode.HTML)
 
     try:
         bot.send_message(
@@ -416,8 +416,8 @@ def check_and_ban(update, user_id, should_message=True):
         if should_message:
             text = (
                 f"<b>Peringatan</b>: pengguna ini diblokir secara global.\n"
-                f"<code>Saya melarang nya disini</code>.\n"
-                f"<b>Chat Banding</b>: @{SUPPORT_CHAT}\n"
+                f"<code>Saya melarang nya disini!</code>.\n"
+                f"<b>Banding</b>: @{SUPPORT_CHAT}\n"
                 f"<b>ID Pengguna</b>: <code>{user_id}</code>"
             )
             user = sql.get_gbanned_user(user_id)
