@@ -252,9 +252,9 @@ def gban(update: Update, context: CallbackContext):
 
     if gban_time > 60:
         gban_time = round((gban_time / 60), 2)
-        message.reply_text("Global Banned. Done!", parse_mode=ParseMode.HTML)
+        message.reply_text("Global Banned Done! User diblokir di semua grup.", parse_mode=ParseMode.HTML)
     else:
-        message.reply_text("Global Banned. Done!", parse_mode=ParseMode.HTML)
+        message.reply_text("Global Banned Done! User diblokir disemua grup.", parse_mode=ParseMode.HTML)
 
     try:
         bot.send_message(
@@ -415,14 +415,14 @@ def check_and_ban(update, user_id, should_message=True):
         update.effective_chat.kick_member(user_id)
         if should_message:
             text = (
-                f"<b>Alert</b>: this user is globally banned.\n"
-                f"<code>*bans them from here*</code>.\n"
-                f"<b>Appeal chat</b>: @{SUPPORT_CHAT}\n"
-                f"<b>User ID</b>: <code>{user_id}</code>"
+                f"<b>Peringatan</b>: pengguna ini diblokir secara global.\n"
+                f"<code>Saya melarang nya disini</code>.\n"
+                f"<b>Chat Banding</b>: @{SUPPORT_CHAT}\n"
+                f"<b>ID Pengguna</b>: <code>{user_id}</code>"
             )
             user = sql.get_gbanned_user(user_id)
             if user.reason:
-                text += f"\n<b>Ban Reason:</b> <code>{html.escape(user.reason)}</code>"
+                text += f"\n<b>Alasan Larangan:</b> <code>{html.escape(user.reason)}</code>"
             update.effective_message.reply_text(text, parse_mode=ParseMode.HTML)
 
 
