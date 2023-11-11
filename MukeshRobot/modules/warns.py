@@ -131,7 +131,7 @@ def warn(
         )
 
         reply = (
-            f"<code>⚠️</code><b>Peringatan</b>\n"
+            f"<code>⚠️</code>  <b>PERINGATAN</b>\n"
             f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
             f"<code> </code><b>•  Jumlah:</b> {num_warns}/{limit}"
         )
@@ -176,7 +176,7 @@ def button(update: Update, context: CallbackContext) -> str:
         res = sql.remove_warn(user_id, chat.id)
         if res:
             update.effective_message.edit_text(
-                "peringatan dihapus oleh‌‌ {}.".format(mention_html(user.id, user.first_name)),
+                "Peringatan dihapus oleh‌‌ {}.".format(mention_html(user.id, user.first_name)),
                 parse_mode=ParseMode.HTML,
             )
             user_member = chat.get_member(user_id)
