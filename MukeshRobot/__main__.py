@@ -232,7 +232,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_photo(
             START_IMG,
-            caption="ɪ ᴀᴍ ᴀʟɪᴠᴇ  !\n<b>ɪ ᴅɪᴅɴ'ᴛ ꜱʟᴇᴇᴘ sɪɴᴄᴇ​:</b> <code>{}</code>".format(
+            caption="ɪ ᴀᴍ ᴀʟɪᴠᴇ!\n<b>ɪ ᴅɪᴅɴ'ᴛ ꜱʟᴇᴇᴘ sɪɴᴄᴇ​:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
