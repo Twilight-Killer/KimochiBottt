@@ -241,7 +241,7 @@ def connect_chat(update, context):
                 send_message(update.effective_message, "Connection failed!")
         else:
             send_message(
-                update.effective_message, "Connection to this chat is not allowed!"
+                update.effective_message, "Koneksi ke obrolan ini tidak diperbolehkan!"
             )
 
 
@@ -254,7 +254,7 @@ def disconnect_chat(update, context):
                 update.effective_message, "Terputus dari obrolan!"
             )
         else:
-            send_message(update.effective_message, "You're not connected!")
+            send_message(update.effective_message, "Anda tidak terhubung!")
     else:
         send_message(update.effective_message, "This command is only available in PM.")
 
