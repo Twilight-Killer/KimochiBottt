@@ -129,7 +129,7 @@ def connect_chat(update, context):
                     chat_name = conn_chat.title
                     send_message(
                         update.effective_message,
-                        "Berhasil terhubung ke *{}*. \nGunakan /helpconnect untuk memeriksa perintah yang tersedia.".format(
+                        "Berhasil terhubung ke *{}*. \nGunakan `/helpconnect` untuk memeriksa perintah yang tersedia.".format(
                             chat_name
                         ),
                         parse_mode=ParseMode.MARKDOWN,
@@ -139,7 +139,7 @@ def connect_chat(update, context):
                     send_message(update.effective_message, "Connection failed!")
             else:
                 send_message(
-                    update.effective_message, "Connection to this chat is not allowed!"
+                    update.effective_message, "Koneksi ke obrolan ini tidak diperbolehkan!"
                 )
         else:
             gethistory = sql.get_history_conn(user.id)
@@ -228,7 +228,7 @@ def connect_chat(update, context):
                     sql.add_history_conn(user.id, str(chat.id), chat_name)
                     context.bot.send_message(
                         update.effective_message.from_user.id,
-                        "You are connected to *{}*. \nUse `/helpconnect` to check available commands.".format(
+                        "Kamu terhubung ke *{}*. \nGunakan `/helpconnect` untuk memeriksa perintah yang tersedia.".format(
                             chat_name
                         ),
                         parse_mode="markdown",
