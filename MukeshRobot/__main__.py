@@ -463,14 +463,14 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(text="🤖 ᴀꜱɪꜱᴛᴇɴ", callback_data="help_back"),
-                        InlineKeyboardButton(text="Mᴜsɪᴄ 🎧", callback_data="Music_")
+                        InlineKeyboardButton(text="ᴍᴜꜱɪᴋ 🎧", callback_data="Music_")
                     ],
                     [
-                        InlineKeyboardButton(text="💁 Bᴀsɪᴄ ", callback_data="basic_help"),
-                        InlineKeyboardButton(text="Exᴘᴇʀᴛ 👮", callback_data="expert_help")
+                        InlineKeyboardButton(text="💁 ᴅᴀꜱᴀʀ ", callback_data="basic_help"),
+                        InlineKeyboardButton(text="ᴀʜʟɪ 👮", callback_data="expert_help")
                     ],
                     [
-                        InlineKeyboardButton(text="🍹 Aᴅᴠᴀɴᴄᴇ", callback_data="advance_help"),
+                        InlineKeyboardButton(text="🍹 ᴘʀᴏ", callback_data="advance_help"),
                         InlineKeyboardButton(text="Dᴏɴᴀᴛɪᴏɴ 🎉", callback_data="donation_help") 
                     ],
                     [InlineKeyboardButton(text="• Hᴏᴍᴇ •", callback_data="mukesh_back")]
