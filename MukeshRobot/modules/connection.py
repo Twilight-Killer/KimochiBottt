@@ -79,9 +79,9 @@ def connection_chat(update, context):
         chat_name = update.effective_message.chat.title
 
     if conn:
-        message = "You are currently connected to {}.\n".format(chat_name)
+        message = "Anda saat ini terhubung ke {}.\n".format(chat_name)
     else:
-        message = "You are currently not connected in any group.\n"
+        message = "Saat ini Anda tidak terhubung dengan grup mana pun.\n"
     send_message(update.effective_message, message, parse_mode="markdown")
 
 
@@ -129,7 +129,7 @@ def connect_chat(update, context):
                     chat_name = conn_chat.title
                     send_message(
                         update.effective_message,
-                        "Successfully connected to *{}*. \nUse /helpconnect to check available commands.".format(
+                        "Berhasil terhubung ke *{}*. \nGunakan /helpconnect untuk memeriksa perintah yang tersedia.".format(
                             chat_name
                         ),
                         parse_mode=ParseMode.MARKDOWN,
@@ -139,7 +139,7 @@ def connect_chat(update, context):
                     send_message(update.effective_message, "Connection failed!")
             else:
                 send_message(
-                    update.effective_message, "Connection to this chat is not allowed!"
+                    update.effective_message, "Koneksi ke obrolan ini tidak diperbolehkan!"
                 )
         else:
             gethistory = sql.get_history_conn(user.id)
@@ -157,7 +157,7 @@ def connect_chat(update, context):
             conn = connected(context.bot, update, chat, user.id, need_admin=False)
             if conn:
                 connectedchat = dispatcher.bot.getChat(conn)
-                text = "You are currently connected to *{}* (`{}`)".format(
+                text = "Anda saat ini terhubung ke *{}* (`{}`)".format(
                     connectedchat.title, conn
                 )
                 buttons.append(
@@ -166,11 +166,11 @@ def connect_chat(update, context):
                     )
                 )
             else:
-                text = "Write the chat ID or tag to connect!"
+                text = "Berikan ID obrolan atau tag untuk terhubung!"
             if gethistory:
-                text += "\n\n*Connection history:*\n"
+                text += "\n\n*History koneksi:*\n"
                 text += "╒═══「 *Info* 」\n"
-                text += "│  Sorted: `Newest`\n"
+                text += "│  Sorted: `Terbaru`\n"
                 text += "│\n"
                 buttons = [buttons]
                 for x in sorted(gethistory.keys(), reverse=True):
@@ -221,14 +221,14 @@ def connect_chat(update, context):
                 chat_name = dispatcher.bot.getChat(chat.id).title
                 send_message(
                     update.effective_message,
-                    "Successfully connected to *{}*.".format(chat_name),
+                    "Berhasil terhubung ke *{}*.".format(chat_name),
                     parse_mode=ParseMode.MARKDOWN,
                 )
                 try:
                     sql.add_history_conn(user.id, str(chat.id), chat_name)
                     context.bot.send_message(
                         update.effective_message.from_user.id,
-                        "You are connected to *{}*. \nUse `/helpconnect` to check available commands.".format(
+                        "Anda terhubung ke‌‌ *{}*. \nGunakan `/helpconnect` untuk memeriksa perintah yang tersedia.".format(
                             chat_name
                         ),
                         parse_mode="markdown",
