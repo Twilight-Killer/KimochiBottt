@@ -307,8 +307,8 @@ def ungban(update: Update, context: CallbackContext):
         chat_origin = f"<b>{chat.id}</b>\n"
 
     log_message = (
-        f"#ᴜɴɢᴀɴɴᴇᴅ\n"
-        f"<b>Originated from:</b> <code>{chat_origin}</code>\n"
+        f"ᴜɴɢʟᴏʙᴀʟ ʙᴀɴɴᴇᴅ\n"
+        f"<b>ᴅᴀʀɪ ɢʀᴜᴘ:</b> <code>{chat_origin}</code>\n"
         f"<b>ᴀᴅᴍɪɴ:</b> {mention_html(user.id, user.first_name)}\n"
         f"<b>ᴜɴʙᴀɴɴᴇᴅ ᴜsᴇʀ:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
         f"<b>ᴜɴʙᴀɴɴᴇᴅ ᴜsᴇʀ ɪᴅ:</b> <code>{user_chat.id}</code>\n"
