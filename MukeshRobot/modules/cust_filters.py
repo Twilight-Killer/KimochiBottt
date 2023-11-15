@@ -64,7 +64,7 @@ def list_handlers(update, context):
             filter_list = "*local filters:*\n"
         else:
             chat_name = chat.title
-            filter_list = "*Filters in {}*:\n"
+            filter_list = "*Filters di {}*:\n"
 
     all_handlers = sql.get_chat_triggers(chat_id)
 
@@ -213,7 +213,7 @@ def filters(update, context):
     if add is True:
         send_message(
             update.effective_message,
-            "Saved filter '{}' in *{}*!".format(keyword, chat_name),
+            "Filter yang disimpan '{}' di *{}*!".format(keyword, chat_name),
             parse_mode=telegram.ParseMode.MARKDOWN,
         )
     raise DispatcherHandlerStop
@@ -245,7 +245,7 @@ def stop_filter(update, context):
     chat_filters = sql.get_chat_triggers(chat_id)
 
     if not chat_filters:
-        send_message(update.effective_message, "Tidak ada filter yang aktif di sini!‌‌")
+        send_message(update.effective_message, "Tidak ada filter yang aktif!‌‌")
         return
 
     for keyword in chat_filters:
@@ -253,14 +253,14 @@ def stop_filter(update, context):
             sql.remove_filter(chat_id, args[1])
             send_message(
                 update.effective_message,
-                "Okay, I'll stop replying to that filter in *{}*.".format(chat_name),
+                "Okey, saya akan berhenti membalas filter di *{}*.".format(chat_name),
                 parse_mode=telegram.ParseMode.MARKDOWN,
             )
             raise DispatcherHandlerStop
 
     send_message(
         update.effective_message,
-        "That's not a filter - Click: /filters to get currently active filters.",
+        "Itu bukan filter - Klik: /filters untuk melihat filter yang sedang aktif.",
     )
 
 
