@@ -501,7 +501,7 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
             ),
             )
     elif query.data=="mukesh_back":
-        query.message.edit_caption("""Exᴘᴇʀᴛ ᴄᴏᴍᴍᴀɴᴅs
+        query.message.edit_caption("""ᴘᴇʀɪɴᴛᴀʜ ᴀʜʟɪ
 
 👥 Aᴠᴀɪʟᴀʙʟᴇ ᴛᴏ ᴀʟʟ ᴜsᴇʀs
 👮🏻 Aᴠᴀɪʟᴀʙʟᴇ ᴛᴏ Aᴅᴍɪɴs & Mᴏᴅᴇʀᴀᴛᴏʀs.
