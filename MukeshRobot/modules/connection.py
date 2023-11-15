@@ -27,13 +27,13 @@ def allow_connections(update, context) -> str:
                 sql.set_allow_connect_to_chat(chat.id, False)
                 send_message(
                     update.effective_message,
-                    "Connection has been disabled for this chat",
+                    "Koneksi telah dinonaktifkan untuk obrolan ini",
                 )
             elif var == "yes":
                 sql.set_allow_connect_to_chat(chat.id, True)
                 send_message(
                     update.effective_message,
-                    "Connection has been enabled for this chat",
+                    "Koneksi telah diaktifkan untuk obrolan ini",
                 )
             else:
                 send_message(
