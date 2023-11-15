@@ -251,7 +251,7 @@ def disconnect_chat(update, context):
         disconnection_status = sql.disconnect(update.effective_message.from_user.id)
         if disconnection_status:
             sql.disconnected_chat = send_message(
-                update.effective_message, "Disconnected from chat!"
+                update.effective_message, "Terputus dari obrolan!"
             )
         else:
             send_message(update.effective_message, "You're not connected!")
