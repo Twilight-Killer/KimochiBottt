@@ -128,7 +128,7 @@ def chatbot(update: Update, context: CallbackContext):
         if not mukesh_message(context, message):
             return
         bot.send_chat_action(chat_id, action="typing")
-        url=f"https://fallenxbot.vercel.app/api/apikey={CHATBOT_API}/group-controller/mukesh/message={message.text}"
+        url=f"https://fallenxbot.vercel.app/api/apikey=5935608297-fallen-usbk33kbsu/group-controller/mukesh/message={message.text}"
         response = requests.get(url)
         out=response.json()
         reply=out["reply"]
