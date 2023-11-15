@@ -171,8 +171,8 @@ def gban(update: Update, context: CallbackContext):
         chat_origin = "<b>{}</b>\n".format(chat.id)
 
     log_message = (
-        f"#ɢʙᴀɴɴᴇᴅ\n"
-        f"<b>ᴏʀɢɪɴɪᴛᴇᴅ ғʀᴏᴍ :</b> <code>{chat_origin}</code>\n"
+        f"ɢʟᴏʙᴀʟ ʙᴀɴɴᴇᴅ\n"
+        f"<b>ᴅᴀʀɪ ɢʀᴜᴘ :</b> <code>{chat_origin}</code>\n"
         f"<b>ᴀᴅᴍɪɴ:</b> {mention_html(user.id, user.first_name)}\n"
         f"<b>ʙᴀɴɴᴇᴅ ᴜsᴇʀ:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
         f"<b>ʙᴀɴɴᴇᴅ ᴜsᴇʀ ɪᴅ:</b> <code>{user_chat.id}</code>\n"
@@ -181,9 +181,9 @@ def gban(update: Update, context: CallbackContext):
 
     if reason:
         if chat.type == chat.SUPERGROUP and chat.username:
-            log_message += f'\n<b>Reason:</b> <a href="https://telegram.me/{chat.username}/{message.message_id}">{reason}</a>'
+            log_message += f'\n<b>ᴀʟᴀꜱᴀɴ:</b> <a href="https://telegram.me/{chat.username}/{message.message_id}">{reason}</a>'
         else:
-            log_message += f"\n<b>Reason:</b> <code>{reason}</code>"
+            log_message += f"\n<b>ᴀʟᴀꜱᴀɴ:</b> <code>{reason}</code>"
 
     if EVENT_LOGS:
         try:
