@@ -24,7 +24,7 @@ async def carbon_func(_, message):
     await pbot.send_photo(
         message.chat.id,
         photo=carbon,
-        caption=f"» ᴅᴀʀɪ : {message.from_user.mention}",
+        caption=f"ᴅᴀʀɪ : {message.from_user.mention}",
     )
     await m.delete()
     carbon.close()
