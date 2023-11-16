@@ -56,7 +56,7 @@ def list_handlers(update, context):
     if not conn is False:
         chat_id = conn
         chat_name = dispatcher.bot.getChat(conn).title
-        filter_list = "*Filter in {}:*\n"
+        filter_list = "*Filter di {}:*\n"
     else:
         chat_id = update.effective_chat.id
         if chat.type == "private":
