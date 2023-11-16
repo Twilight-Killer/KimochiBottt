@@ -22,7 +22,7 @@ class Config(object):
     # Get your API key from https://timezonedb.com/api
 
     # Optional fields
-    CHATBOT_API="" # get it from @FallenChat_Bot using /token
+    CHATBOT_API="1696771874-fallen-cbxc99cxbc" # get it from @FallenChat_Bot using /token
     BL_CHATS = []  # List of groups that you want blacklisted.
     DRAGONS = [1696771874]  # User id of sudo users
     DEV_USERS = []  # User id of dev users
