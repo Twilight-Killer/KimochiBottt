@@ -871,7 +871,7 @@ def send_settings(chat_id, user_id, user=False):
         else:
             dispatcher.bot.send_message(
                 user_id,
-                "Seems like there aren't any user specific settings available :'(",
+                "Sepertinya tidak ada pengaturan khusus yang tersedia :'(",
                 parse_mode=ParseMode.MARKDOWN,
             )
 
@@ -880,7 +880,7 @@ def send_settings(chat_id, user_id, user=False):
             chat_name = dispatcher.bot.getChat(chat_id).title
             dispatcher.bot.send_message(
                 user_id,
-                text="Which module would you like to check {}'s settings for?".format(
+                text="Modul mana yang ingin Anda periksa {}'s pengaturan untuk?".format(
                     chat_name
                 ),
                 reply_markup=InlineKeyboardMarkup(
@@ -890,8 +890,8 @@ def send_settings(chat_id, user_id, user=False):
         else:
             dispatcher.bot.send_message(
                 user_id,
-                "Seems like there aren't any chat settings available :'(\nSend this "
-                "in a group chat you're admin in to find its current settings!",
+                "Sepertinya tidak ada pengaturan obrolan yang tersedia :'(\nKirim ini "
+                "dalam obrolan grup tempat Anda menjadi admin untuk menemukan pengaturannya saat ini!",
                 parse_mode=ParseMode.MARKDOWN,
             )
 
@@ -909,7 +909,7 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = mod_match.group(1)
             module = mod_match.group(2)
             chat = bot.get_chat(chat_id)
-            text = "*{}* has the following settings for the *{}* module:\n\n".format(
+            text = "*{}* memiliki pengaturan berikut untuk *{}* module:\n\n".format(
                 escape_markdown(chat.title), CHAT_SETTINGS[module].__mod_name__
             ) + CHAT_SETTINGS[module].__chat_settings__(chat_id, user.id)
             query.message.reply_text(text,
@@ -930,8 +930,8 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = prev_match.group(1)
             curr_page = int(prev_match.group(2))
             chat = bot.get_chat(chat_id)
-            query.message.reply_text("""Hi there! There are quite a few settings for {} - go ahead and pick what "
-                you're interested in.""".format(chat.title),
+            query.message.reply_text("""Hai, yang di sana!  Ada beberapa pengaturan untuk {} - silakan pilih apa "
+                kamu tertarik.""".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
                         curr_page - 1, CHAT_SETTINGS, "stngs", chat=chat_id
@@ -944,8 +944,8 @@ def settings_button(update: Update, context: CallbackContext):
             next_page = int(next_match.group(2))
             chat = bot.get_chat(chat_id)
             query.message.reply_text(text=
-                """Hi there! There are quite a few settings for {} - go ahead and pick what 
-                you're interested in.""".format(chat.title),
+                """Hai, yang di sana!  Ada beberapa pengaturan untuk {} - silakan pilih apa 
+                kamu tertarik.""".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
                         next_page + 1, CHAT_SETTINGS, "stngs", chat=chat_id
@@ -956,8 +956,8 @@ def settings_button(update: Update, context: CallbackContext):
         elif back_match:
             chat_id = back_match.group(1)
             chat = bot.get_chat(chat_id)
-            query.message.reply_text("""Hi there! There are quite a few settings for {} - go ahead and pick what 
-                you're interested in.""".format(escape_markdown(chat.title)),
+            query.message.reply_text("""Hai, yang di sana!  Ada beberapa pengaturan untuk {} - silakan pilih apa 
+                kamu tertarik.""".format(escape_markdown(chat.title)),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(0, CHAT_SETTINGS, "stngs", chat=chat_id)
@@ -969,11 +969,11 @@ def settings_button(update: Update, context: CallbackContext):
         query.message.delete()
     except BadRequest as excp:
         if excp.message not in [
-            "Message is not modified",
+            "Pesan tidak diubah",
             "Query_id_invalid",
-            "Message can't be deleted",
+            "Pesan tidak dapat dihapus",
         ]:
-            LOGGER.exception("Exception in settings buttons. %s", str(query.data))
+            LOGGER.exception("Pengecualian pada tombol pengaturan. %s", str(query.data))
 
 
 def get_settings(update: Update, context: CallbackContext):
@@ -984,7 +984,7 @@ def get_settings(update: Update, context: CallbackContext):
     # ONLY send settings in PM
     if chat.type != chat.PRIVATE:
         if is_user_admin(chat, user.id):
-            text = "ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ɢᴇᴛ ᴛʜɪs ᴄʜᴀᴛ's sᴇᴛᴛɪɴɢs ᴀs ᴡᴇʟʟ ᴀs ʏᴏᴜʀs"
+            text = "ᴋʟɪᴋ ᴅɪ ꜱɪɴɪ ᴜɴᴛᴜᴋ ᴍᴇᴍᴇʀɪᴋꜱᴀ ᴘᴇɴɢᴀᴛᴜʀᴀɴ ᴏʙʀᴏʟᴀɴ ɪɴɪ ᴅᴀɴ ᴊᴜɢᴀ ᴘᴇɴɢᴀᴛᴜʀᴀɴ ᴀɴᴅᴀ"
             msg.reply_photo(START_IMG,text,
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -1017,7 +1017,7 @@ def donate(update: Update, context: CallbackContext):
 
         if OWNER_ID != 1128130156:
             update.effective_message.reply_text(
-                f"» ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴩᴇʀ ᴏғ {dispatcher.bot.first_name} sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ɪs [ɢɪᴛʜᴜʙ](https://t.me/DarkiezZzz)"
+                f"» ᴅᴇᴠᴇʟᴏᴩᴇʀ ᴏғ {dispatcher.bot.first_name} sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ɪs [𝚍𝚊𝚛𝚔𝚒𝚎𝚣](https://t.me/DarkiezZzz)"
                 f"\n\nʙᴜᴛ ʏᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴅᴏɴᴀᴛᴇ ᴛᴏ ᴛʜᴇ ᴩᴇʀsᴏɴ ᴄᴜʀʀᴇɴᴛʟʏ ʀᴜɴɴɪɴɢ ᴍᴇ : [ʜᴇʀᴇ]({DONATE_STRING})",
                 parse_mode=ParseMode.MARKDOWN,
                 
@@ -1066,7 +1066,7 @@ def main():
                 [
                     [
                         InlineKeyboardButton(
-                            text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ᴄʜᴀᴛ➕",
+                            text="➕ᴛᴀᴍʙᴀʜᴋᴀɴ ꜱᴀʏᴀ ᴋᴇ ᴏʙʀᴏʟᴀɴ ᴀɴᴅᴀ➕",
                             url="https://t.me/Kimochi_robot?startgroup=true"
                             )
                        ]
@@ -1078,20 +1078,20 @@ def main():
                 f"@{SUPPORT_CHAT}",
                 photo=f"{START_IMG}",
                 caption=f"""
-✨ㅤ{BOT_NAME} ᴀʟɪᴠᴇ ʙᴀʙʏ.
+{BOT_NAME} ᴀʟɪᴠᴇ.
 ━━━━━━━━━━━━━
 **ᴍᴀᴅᴇ ᴡɪᴛʜ ᴅᴀʀᴋɪᴇᴢ**
-**ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ:** `{y()}`
-**ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ:** `{telever}`
-**ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ:** `{tlhver}`
-**ᴩʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ:** `{pyrover}`
+**ᴠᴇʀsɪ ᴘʏᴛʜᴏɴ:** `{y()}`
+**ᴠᴇʀsɪ ʟɪʙʀᴀʀʏ:** `{telever}`
+**ᴠᴇʀsɪ ᴛᴇʟᴇᴛʜᴏɴ:** `{tlhver}`
+**ᴠᴇʀsɪ ᴩʏʀᴏɢʀᴀᴍ:** `{pyrover}`
 ━━━━━━━━━━━━━
 """,reply_markup=x,
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
             LOGGER.warning(
-                f"Bot isn't able to send message to @{SUPPORT_CHAT}, go and check!"
+                f"Bot tidak dapat mengirim pesan ke @{SUPPORT_CHAT}, pergi dan periksa!"
             )
         except BadRequest as e:
             LOGGER.warning(e.message)
