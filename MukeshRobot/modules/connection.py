@@ -375,7 +375,7 @@ def connect_button(update, context):
             )
     elif clear_match:
         sql.clear_history_conn(query.from_user.id)
-        query.message.edit_text("History connected has been cleared!")
+        query.message.edit_text("Riwayat terhubung telah dihapus!")
     elif connect_close:
         query.message.edit_text("Tutup.\nUntuk membuka lagi, type /connect")
     else:
