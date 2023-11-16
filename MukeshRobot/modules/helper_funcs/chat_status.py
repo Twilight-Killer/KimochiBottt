@@ -115,8 +115,8 @@ def dev_plus(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "This is a developer restricted command."
-                " You do not have permissions to run this."
+                "Ini adalah perintah yang dibatasi pencipta."
+                " Anda tidak di izinkan untuk menjalankan ini."
             )
 
     return is_dev_plus_func
@@ -140,7 +140,7 @@ def sudo_plus(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "Who dis non-admin telling me what to do? You want a punch?"
+                "Anda bukan admin untuk melakukan ini! Anda ingin saya pukul?."
             )
 
     return is_sudo_plus_func
@@ -177,7 +177,7 @@ def whitelist_plus(func):
             return func(update, context, *args, **kwargs)
         else:
             update.effective_message.reply_text(
-                f"You don't have access to use this.\nVisit @{SUPPORT_CHAT}"
+                f"Anda tidak memiliki akses untuk menggunakan ini.\nKunjungi @{SUPPORT_CHAT}"
             )
 
     return is_whitelist_plus_func
@@ -201,7 +201,7 @@ def user_admin(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "Who dis non-admin telling me what to do? You want a punch?"
+                "Anda bukan admin untuk melakukan ini! Anda ingin saya pukul?"
             )
 
     return is_admin
@@ -253,9 +253,9 @@ def bot_admin(func):
         message_chat_title = update.effective_message.chat.title
 
         if update_chat_title == message_chat_title:
-            not_admin = "I'm not admin! - REEEEEE"
+            not_admin = "Saya bukan admin! - SHIIIT"
         else:
-            not_admin = f"I'm not admin in <b>{update_chat_title}</b>! - REEEEEE"
+            not_admin = f"Saya bukan admin di <b>{update_chat_title}</b>! - SHIIIT"
 
         if is_bot_admin(chat, bot.id):
             return func(update, context, *args, **kwargs)
