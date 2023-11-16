@@ -65,11 +65,11 @@ async def callback_query_handler(event):
     try:
         boy = event.sender_id
         PRO = await bot.get_entity(boy)
-        LILIE = f"ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}\n\n"
-        LILIE += f"ғɪʀsᴛ ɴᴀᴍᴇ: {PRO.first_name} \n"
-        LILIE += f"ʟᴀsᴛ ɴᴀᴍᴇ: {PRO.last_name}\n"
-        LILIE += f"ʏᴏᴜ ʙᴏᴛ : {PRO.bot} \n"
-        LILIE += f"ʀᴇsᴛʀɪᴄᴛᴇᴅ : {PRO.restricted} \n"
+        LILIE = f"ᴘᴏᴡᴇʀᴇᴅ ʙʏ : {BOT_NAME}\n\n"
+        LILIE += f"ɴᴀᴍᴀ ᴅᴇᴘᴀɴ : {PRO.first_name} \n"
+        LILIE += f"ɴᴀᴍᴀ ʙᴇʟᴀᴋᴀɴɢ : {PRO.last_name}\n"
+        LILIE += f"ᴋᴀᴍᴜ ʙᴏᴛ : {PRO.bot} \n"
+        LILIE += f"ᴅɪʙᴀᴛᴀꜱɪ : {PRO.restricted} \n"
         LILIE += f"ᴜsᴇʀ ɪᴅ: {boy}\n"
         LILIE += f"ᴜsᴇʀɴᴀᴍᴇ : @{PRO.username}\n"
         await event.answer(LILIE, alert=True)
