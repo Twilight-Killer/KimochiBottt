@@ -815,7 +815,7 @@ def get_help(update: Update, context: CallbackContext):
                 ),
             )
             return
-        update.effective_message.reply_photo(START_IMG,"» Wʜᴇʀᴇ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴏᴘᴇɴ ᴛʜᴇ sᴇᴛᴛɪɴɢs ᴍᴇɴᴜ?.",
+        update.effective_message.reply_photo(START_IMG,"» ᴅɪ ᴍᴀɴᴀ ᴀɴᴅᴀ ɪɴɢɪɴ ᴍᴇᴍʙᴜᴋᴀ ᴍᴇɴᴜ ᴘᴇɴɢᴀᴛᴜʀᴀɴ?.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
