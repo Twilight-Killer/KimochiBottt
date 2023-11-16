@@ -52,17 +52,17 @@ async def restart(client, m: Message):
     await asyncio.sleep(0.2)
     await m.reply_photo(
         START_IMG,
-        caption=f"""**ʜᴇʏ ꜱᴀʏᴀ 『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
+        caption=f"""**ꜱᴀʏᴀ『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
    ━━━━━━━━━━━━━━━━━━━
   » **ᴍʏ ᴏᴡɴᴇʀ :** [ᴅᴀʀᴋɪᴇᴢ](tg://user?id={OWNER_ID})
   
-  » **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{lver}`
+  » **ᴠᴇʀsɪ ʟɪʙʀᴀʀʏ :** `{lver}`
   
-  » **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tver}`
+  » **ᴠᴇʀsɪ ᴛᴇʟᴇᴛʜᴏɴ :** `{tver}`
   
-  » **ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** `{pver}`
+  » **ᴠᴇʀsɪ ᴘʏʀᴏɢʀᴀᴍ :** `{pver}`
   
-  » **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{pyver()}`
+  » **ᴠᴇʀsɪ ᴘʏᴛʜᴏɴ :** `{pyver()}`
    ━━━━━━━━━━━━━━━━━━━""",
         reply_markup=InlineKeyboardMarkup(Mukesh),
     )
