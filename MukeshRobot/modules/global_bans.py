@@ -80,13 +80,13 @@ def gban(update: Update, context: CallbackContext):
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "Tampaknya Anda tidak menyebut ke pengguna atau ID yang diberikan salah.."
         )
         return
 
     if int(user_id) in DEV_USERS:
         message.reply_text(
-            "That user is part of the Association\nI can't act against our own."
+            "Pengguna tersebut adalah bagian dari Asosiasi\nSaya tidak bisa bertindak melawan diri saya sendiri."
         )
         return
 
@@ -111,7 +111,7 @@ def gban(update: Update, context: CallbackContext):
         return
 
     if user_id == bot.id:
-        message.reply_text("You uhh...want me to punch myself?")
+        message.reply_text("Kamu uhh...ingin aku memukul diriku sendiri?")
         return
 
     if user_id in [777000, 1087968824]:
@@ -121,7 +121,7 @@ def gban(update: Update, context: CallbackContext):
     try:
         user_chat = bot.get_chat(user_id)
     except BadRequest as excp:
-        if excp.message == "User not found":
+        if excp.message == "Pengguna tidak ditemukan":
             message.reply_text("I can't seem to find this user.")
             return ""
         else:
@@ -135,7 +135,7 @@ def gban(update: Update, context: CallbackContext):
 
         if not reason:
             message.reply_text(
-                "This user is already gbanned; I'd change the reason, but you haven't given me one..."
+                "Pengguna ini sudah di-banned;  Saya akan mengubah alasannya, tetapi Anda belum memberi saya satu pun..."
             )
             return
 
@@ -243,7 +243,7 @@ def gban(update: Update, context: CallbackContext):
         send_to_list(
             bot,
             DRAGONS + DEMONS,
-            f"Gban complete! (User banned in <code>{gbanned_chats}</code> chats)",
+            f"Global Banned Done! (Pengguna banned dalam <code>{gbanned_chats}</code> obrolan)",
             html=True,
         )
 
@@ -252,9 +252,9 @@ def gban(update: Update, context: CallbackContext):
 
     if gban_time > 60:
         gban_time = round((gban_time / 60), 2)
-        message.reply_text("Global Banned Done! User diblokir di semua grup.", parse_mode=ParseMode.HTML)
+        message.reply_text("Pengguna Di Global Banned! Pengguna yang sudah di Global Banned akan di blokir di semua grup jika saya admin disuatu grup itu.", parse_mode=ParseMode.HTML)
     else:
-        message.reply_text("Global Banned Done! User diblokir di semua grup.", parse_mode=ParseMode.HTML)
+        message.reply_text("Pengguna Di Global Banned! Pengguna yang sudah di Global Banned akan di blokir di semua grup jika saya admin disuatu grup itu.", parse_mode=ParseMode.HTML)
 
     try:
         bot.send_message(
