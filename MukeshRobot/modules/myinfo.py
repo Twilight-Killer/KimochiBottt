@@ -24,11 +24,11 @@ async def proboyx(event):
     await event.get_chat()
     datetime.utcnow()
     firstname = event.sender.first_name
-    button = [[custom.Button.inline("ɪɴғᴏʀᴍᴀᴛɪᴏɴ", data="informations")]]
+    button = [[custom.Button.inline("ɪɴꜰᴏʀᴍᴀꜱɪ", data="informations")]]
     on = await bot.send_file(
         event.chat_id,
         file=file2,
-        caption=f"ʜᴇʏ {firstname}, \nᴄʟɪᴄᴋ ᴏɴ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ \n ᴛᴏ ɢᴇᴛ ɪɴғᴏ ᴀʙᴏᴜᴛ ʏᴏᴜ",
+        caption=f"ʜᴇʏ {firstname}. \nᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ \nᴜɴᴛᴜᴋ ᴍᴇɴᴅᴀᴘᴀᴛᴋᴀɴ ɪɴꜰᴏ ᴛᴇɴᴛᴀɴɢ ᴀɴᴅᴀ",
         buttons=button,
     )
 
