@@ -65,7 +65,7 @@ async def couple(_, message):
             c2_id = int(is_selected["c2_id"])
             c1_name = (await pbot.get_users(c1_id)).mention
             c2_name = (await pbot.get_users(c2_id)).mention
-            couple_selection_message = f"""ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ :
+            couple_selection_message = f"""ᴘᴀꜱᴀɴɢᴀɴ ʙᴇʙᴇʀᴀᴘᴀ ʜᴀʀɪ :
 
 {c1_name} + {c2_name} = 💗
 ɴᴇᴡ ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ᴄᴀɴ ʙᴇ ᴄʜᴏsᴇɴ ᴀᴛ 12 ᴀᴍ {tomorrow}"""
