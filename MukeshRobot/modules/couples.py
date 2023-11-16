@@ -55,7 +55,7 @@ async def couple(_, message):
             couple_selection_message = f"""**ᴘᴀꜱᴀɴɢᴀɴ ʙᴇʙᴇʀᴀᴘᴀ ʜᴀʀɪ :**
 
 {c1_mention} + {c2_mention} = 💗
-ᴘᴀꜱᴀɴɢᴀɴ ʙᴀʀᴜ ᴀᴋᴀɴ ᴅɪᴘɪʟɪʜ ʙᴇꜱᴏᴋ {tomorrow}"""
+ᴘᴀꜱᴀɴɢᴀɴ ʙᴀʀᴜ 💗 ᴀᴋᴀɴ ᴅɪᴘɪʟɪʜ ʙᴇꜱᴏᴋ {tomorrow}"""
             await pbot.send_message(message.chat.id, text=couple_selection_message)
             couple = {"c1_id": c1_id, "c2_id": c2_id}
             await save_couple(chat_id, today, couple)
@@ -68,7 +68,7 @@ async def couple(_, message):
             couple_selection_message = f"""ᴘᴀꜱᴀɴɢᴀɴ ʙᴇʙᴇʀᴀᴘᴀ ʜᴀʀɪ :
 
 {c1_name} + {c2_name} = 💗
-ᴘᴀꜱᴀɴɢᴀɴ ʙᴀʀᴜ ᴀᴋᴀɴ ᴅɪᴘɪʟɪʜ ʙᴇꜱᴏᴋ {tomorrow}"""
+ᴘᴀꜱᴀɴɢᴀɴ ʙᴀʀᴜ 💗 ᴀᴋᴀɴ ᴅɪᴘɪʟɪʜ ʙᴇꜱᴏᴋ {tomorrow}"""
             await pbot.send_message(message.chat.id, text=couple_selection_message)
     except Exception as e:
         print(e)
