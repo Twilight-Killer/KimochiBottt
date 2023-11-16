@@ -25,7 +25,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += " " + str(i)
     print(query)
-    m = message.reply("**» sᴇᴀʀᴄʜɪɴɢ, ᴩʟᴇᴀsᴇ ᴡᴀɪᴛ...**")
+    m = message.reply("**» ᴍᴇɴᴄᴀʀɪ, ʜᴀʀᴀᴘ ᴛᴜɴɢɢᴜ...**")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -43,17 +43,17 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "**😴 sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ ᴏɴ ʏᴏᴜᴛᴜʙᴇ.**\n\n» ᴍᴀʏʙᴇ ᴛᴜɴᴇ ɢᴀʟᴀᴛ ʟɪᴋʜᴀ ʜᴏ, ᴩᴀᴅʜᴀɪ - ʟɪᴋʜᴀɪ ᴛᴏʜ ᴋᴀʀᴛᴀ ɴᴀʜɪ ᴛᴜ !"
+            "**😴 ʟᴀɢᴜ ᴛɪᴅᴀᴋ ᴅɪᴛᴇᴍᴜᴋᴀɴ ᴅɪ ʏᴏᴜᴛᴜʙᴇ.**\n\n» ᴍᴜɴɢᴋɪɴ ᴀɴᴅᴀ ꜱᴀʟᴀʜ ᴍᴇɴᴜʟɪꜱ ʟᴀɢᴜɴʏᴀ, ᴍᴇᴍʙᴀᴄᴀɴʏᴀ - ᴀɴᴅᴀ ꜱᴀʟᴀʜ ᴍᴇɴᴜʟɪꜱɴʏᴀ !"
         )
         print(str(e))
         return
-    m.edit("» ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...\n\nᴩʟᴇᴀsᴇ ᴡᴀɪᴛ...")
+    m.edit("» ᴍᴇɴᴅᴏᴡɴʟᴏᴀᴅ...\n\nʜᴀʀᴀᴘ ᴛᴜɴɢɢᴜ...")
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**ᴛɪᴛʟᴇ :** {title[:25]}\n**ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}`\n**ᴠɪᴇᴡs :** `{views}`\n**ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ »** {chutiya}"
+        rep = f"**ᴊᴜᴅᴜʟ :** {title[:25]}\n**ᴅᴜʀᴀꜱɪ :** `{duration}`\n**ᴅɪʟɪʜᴀᴛ :** `{views}`\n**ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ »** {chutiya}"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(dur_arr[i]) * secmul
