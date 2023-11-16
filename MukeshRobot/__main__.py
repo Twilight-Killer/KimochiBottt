@@ -820,7 +820,7 @@ def get_help(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="👤 ʙᴜᴋᴀ ᴅɪ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ",
+                            text="👤 ʙᴜᴋᴀ ᴅɪ ᴘʀɪᴠᴀᴛᴇ",
                             url="https://t.me/{}?start=help".format(context.bot.username),
                         )
                     ],
