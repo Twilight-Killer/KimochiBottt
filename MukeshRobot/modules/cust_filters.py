@@ -117,7 +117,7 @@ def filters(update, context):
     if not msg.reply_to_message and len(args) < 2:
         send_message(
             update.effective_message,
-            "Please provide keyboard keyword for this filter to reply with!",
+            "Harap berikan kata kunci keyboard untuk filter membalas!!",
         )
         return
 
@@ -125,7 +125,7 @@ def filters(update, context):
         if len(args) < 2:
             send_message(
                 update.effective_message,
-                "Please provide keyword for this filter to reply with!",
+                "Harap berikan kata kunci keyboard untuk filter membalas!!",
             )
             return
         else:
@@ -177,7 +177,7 @@ def filters(update, context):
     elif not text and not file_type:
         send_message(
             update.effective_message,
-            "Please provide keyword for this filter reply with!",
+            "Harap berikan kata kunci keyboard untuk filter membalas!",
         )
         return
 
@@ -239,7 +239,7 @@ def stop_filter(update, context):
             chat_name = chat.title
 
     if len(args) < 2:
-        send_message(update.effective_message, "What should i stop?")
+        send_message(update.effective_message, "Apa yang harus saya stop?")
         return
 
     chat_filters = sql.get_chat_triggers(chat_id)
