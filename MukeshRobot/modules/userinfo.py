@@ -434,7 +434,7 @@ def set_about_me(update: Update, context: CallbackContext):
 
 
 def stats(update: Update, context: CallbackContext):
-    stats = f"<b> ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs ᴏғ {BOT_NAME} :</b>\n" + "\n".join(
+    stats = f"<b> ꜱᴛᴀᴛɪꜱᴛɪᴋ ꜱᴀᴀᴛ ɪɴɪ ᴅᴀʀɪ {BOT_NAME} :</b>\n" + "\n".join(
         [mod.__stats__() for mod in STATS]
     )
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
