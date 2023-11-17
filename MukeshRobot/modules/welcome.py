@@ -583,7 +583,7 @@ def welcome(update: Update, context: CallbackContext):
         noformat = True
         pref, welcome_m, cust_content, welcome_type = sql.get_welc_pref(chat.id)
         update.effective_message.reply_text(
-            f"Obrolan ini telah menyetel pengaturan selamat datangnya: `{pref}`.\n"
+            f"Obrolan ini telah diatur selamat datang ke: `{pref}`.\n"
             f"*Pesan selamat datang (tidak mengisi {{}}) is:*",
             parse_mode=ParseMode.MARKDOWN,
         )
@@ -645,7 +645,7 @@ def goodbye(update: Update, context: CallbackContext):
         noformat = True
         pref, goodbye_m, goodbye_type = sql.get_gdbye_pref(chat.id)
         update.effective_message.reply_text(
-            f"Obrolan ini telah menyetel pengaturan selamat tinggalnya: `{pref}`.\n"
+            f"Obrolan ini telah diatur selamat tinggal ke: `{pref}`.\n"
             f"*Pesan selamat tinggal (tidak mengisi {{}}) is:*",
             parse_mode=ParseMode.MARKDOWN,
         )
@@ -701,7 +701,7 @@ def set_welcome(update: Update, context: CallbackContext) -> str:
         return ""
 
     sql.set_custom_welcome(chat.id, content, text, data_type, buttons)
-    msg.reply_text("Berhasil menyetel pesan selamat datang!")
+    msg.reply_text("Berhasil mengatur pesan selamat datang!")
 
     return (
         f"<b>{html.escape(chat.title)}:</b>\n"
@@ -719,7 +719,7 @@ def reset_welcome(update: Update, context: CallbackContext) -> str:
 
     sql.set_custom_welcome(chat.id, None, sql.DEFAULT_WELCOME, sql.Types.TEXT)
     update.effective_message.reply_text(
-        "Berhasil menyetel ulang pesan selamat datang ke bawaan!"
+        "Berhasil mengatur ulang pesan selamat datang ke bawaan!"
     )
 
     return (
@@ -743,7 +743,7 @@ def set_goodbye(update: Update, context: CallbackContext) -> str:
         return ""
 
     sql.set_custom_gdbye(chat.id, content or text, data_type, buttons)
-    msg.reply_text("Berhasil menyetel pesan selamat tinggal!")
+    msg.reply_text("Berhasil mengatur pesan selamat tinggal!")
     return (
         f"<b>{html.escape(chat.title)}:</b>\n"
         f"#SET_GOODBYE\n"
