@@ -260,7 +260,7 @@ def stop_filter(update, context):
 
     send_message(
         update.effective_message,
-        "Itu bukan filter - Klik: /filters untuk melihat filter yang sedang aktif.",
+        "Filter tidak ditemukan - Klik: /filters untuk melihat filter yang sedang aktif.",
     )
 
 
