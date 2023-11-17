@@ -41,8 +41,8 @@ def send_rules(update, chat_id, from_pm=False, dest_chat=None):
         if excp.message == "Chat not found" and from_pm:
             bot.send_message(
                 dest_chat,
-                "The rules shortcut for this chat hasn't been set properly! Ask admins to "
-                "fix this.\nMaybe they forgot the hyphen in ID",
+                "Pintasan aturan untuk obrolan ini belum diatur dengan benar!  Minta admin untuk "
+                "Perbaiki ini.\nMungkin mereka lupa untuk hubungkan ID",
             )
             return
         else:
@@ -61,12 +61,12 @@ def send_rules(update, chat_id, from_pm=False, dest_chat=None):
     elif from_pm:
         bot.send_message(
             dest_chat,
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!",
+            "Admin grup belum menetapkan aturan apa pun untuk obrolan ini. "
+            "Bukan berarti itu tidak melanggar hukum...!",
         )
     elif rules and reply_msg:
         reply_msg.reply_text(
-            "ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʀᴜʟᴇs.",
+            "ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ᴜɴᴛᴜᴋ ᴍᴇʟɪʜᴀᴛ ᴘᴇʀᴀᴛᴜʀᴀɴ",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -80,7 +80,7 @@ def send_rules(update, chat_id, from_pm=False, dest_chat=None):
         )
     elif rules:
         update.effective_message.reply_text(
-            "ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʀᴜʟᴇs.",
+            "ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ᴜɴᴛᴜᴋ ᴍᴇʟɪʜᴀᴛ ᴘᴇʀᴀᴛᴜʀᴀɴ.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -94,8 +94,8 @@ def send_rules(update, chat_id, from_pm=False, dest_chat=None):
         )
     else:
         update.effective_message.reply_text(
-            "The group admins haven't set any rules for this chat yet. "
-            "This probably doesn't mean it's lawless though...!",
+            "Admin grup belum menetapkan aturan apa pun untuk obrolan ini. "
+            "Bukan berarti itu tidak melanggar hukum...!",
         )
 
 
@@ -122,9 +122,9 @@ def set_rules(update: Update, context: CallbackContext):
         )
 
         sql.set_rules(chat_id, markdown_rules)
-        update.effective_message.reply_text("Successfully set rules for this group.")
+        update.effective_message.reply_text("Berhasil mengatur rules untuk grup ini.")
     else:
-        update.effective_message.reply_text("There's... no rules?")
+        update.effective_message.reply_text("Tidak ada rules?")
 
 
 @connection_status
@@ -132,7 +132,7 @@ def set_rules(update: Update, context: CallbackContext):
 def clear_rules(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     sql.set_rules(chat_id, "")
-    update.effective_message.reply_text("Successfully cleared rules!")
+    update.effective_message.reply_text("Berhasil menghapus rules!")
 
 
 def __stats__():
@@ -150,7 +150,7 @@ def __migrate__(old_chat_id, new_chat_id):
 
 
 def __chat_settings__(chat_id, user_id):
-    return f"This chat has had it's rules set: `{bool(sql.get_rules(chat_id))}`"
+    return f"Obrolan ini telah menetapkan rules: `{bool(sql.get_rules(chat_id))}`"
 
 
 __help__ = """
