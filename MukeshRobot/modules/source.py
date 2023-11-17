@@ -16,13 +16,13 @@ Mukesh = "https://telegra.ph/file/d30ac2c7f39d404823823.jpg"
 async def repo(client, message):
     await message.reply_photo(
         photo=Mukesh,
-        caption=f"""**​ʜᴀɪ {message.from_user.mention()}.\n\nꜱᴀʏᴀ [{dispatcher.bot.first_name}](t.me/{dispatcher.bot.username})**
+        caption=f"""**​ʜᴀɪ {message.from_user.mention()}.\n» ꜱᴀʏᴀ [{dispatcher.bot.first_name}](t.me/{dispatcher.bot.username})**
 
-**» ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ​ :** [ᴅᴇᴠᴇʟᴏᴘᴇʀ](tg://user?id={OWNER_ID})
-**» ᴩʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{y()}`
-**» ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{o}` 
-**» ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{s}` 
-**» ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** `{z}`
+**» ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ​ :** [ᴅᴇᴠ](tg://user?id={OWNER_ID})
+**» ᴠᴇʀsɪ ᴩʏᴛʜᴏɴ :** `{y()}`
+**» ᴠᴇʀsɪ ʟɪʙʀᴀʀʏ :** `{o}` 
+**» ᴠᴇʀsɪ ᴛᴇʟᴇᴛʜᴏɴ :** `{s}` 
+**» ᴠᴇʀsɪ ᴘʏʀᴏɢʀᴀᴍ :** `{z}`
 
 **ɴᴏᴡ ᴩᴜʙʟɪᴄ ᴀɴᴅ ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴍᴀᴋᴇ ʏᴏᴜʀ ᴏᴡɴ ʙᴏᴛ.**
 """,
