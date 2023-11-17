@@ -9,7 +9,7 @@ class Config(object):
     TOKEN = ""  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
     OWNER_ID = 1128130156 # If you dont know, run the bot and do /id in your private chat with it, also an integer
     
-    SUPPORT_CHAT = "wibuAnim3"  # Your own group for support, do not add the @
+    SUPPORT_CHAT = "HaoTogelLivedraw"  # Your own group for support, do not add the @
     START_IMG = "https://telegra.ph/file/c28fca8e18d76ca6768fb.jpg"
     EVENT_LOGS = (-1001526106346)  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
     MONGO_DB_URI= ""
