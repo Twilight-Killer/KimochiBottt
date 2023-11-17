@@ -237,11 +237,11 @@ def info(update: Update, context: CallbackContext):
     text = (
         f"ㅤ ㅤㅤ      ✦ ᴜsᴇʀ ɪɴғᴏ ✦\n•❅─────✧❅✦❅✧─────❅•\n"
         f"➻ <b>ᴜsᴇʀ ɪᴅ:</b> <code>{user.id}</code>\n"
-        f"➻ <b>ғɪʀsᴛ ɴᴀᴍᴇ:</b> {html.escape(user.first_name)}"
+        f"➻ <b>ɴᴀᴍᴀ ᴅᴇᴘᴀɴ:</b> {html.escape(user.first_name)}"
     )
 
     if user.last_name:
-        text += f"\n➻ <b>ʟᴀsᴛ ɴᴀᴍᴇ:</b> {html.escape(user.last_name)}"
+        text += f"\n➻ <b>ɴᴀᴍᴀ ʙᴇʟᴀᴋᴀɴɢ:</b> {html.escape(user.last_name)}"
 
     if user.username:
         text += f"\n➻ <b>ᴜsᴇʀɴᴀᴍᴇ:</b> @{html.escape(user.username)}"
@@ -249,12 +249,12 @@ def info(update: Update, context: CallbackContext):
     text += f"\n➻ <b>ʟɪɴᴋ:</b> {mention_html(user.id, 'link')}"
 
     if chat.type != "private" and user_id != bot.id:
-        _stext = "\n➻ <b>ᴩʀᴇsᴇɴᴄᴇ:</b> <code>{}</code>"
+        _stext = "\n➻ <b>ᴋᴇʜᴀᴅɪʀᴀɴ:</b> <code>{}</code>"
 
         status = status = bot.get_chat_member(chat.id, user.id).status
         if status:
             if status in {"left", "kicked"}:
-                text += _stext.format("ɴᴏᴛ ʜᴇʀᴇ")
+                text += _stext.format("ᴛɪᴅᴀᴋ ᴅɪꜱɪɴɪ")
             elif status == "member":
                 text += _stext.format("ᴅᴇᴛᴇᴄᴛᴇᴅ")
             elif status in {"administrator", "creator"}:
@@ -285,7 +285,7 @@ def info(update: Update, context: CallbackContext):
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' \n[<a href="https://t.me/haotogel_result/12012">ᴄʟɪᴄᴋ ʜᴇʀᴇ.</a>]'.format(
+        text += ' \n[<a href="https://t.me/haotogel_result/12012">ᴋʟɪᴋ ᴅɪꜱɪɴɪ.</a>]'.format(
             bot.username
         )
 
@@ -331,7 +331,7 @@ def info(update: Update, context: CallbackContext):
                         ],
                         [
                             InlineKeyboardButton(
-                                text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
+                                text="➕ᴛᴀᴍʙᴀʜᴋᴀɴ ꜱᴀʏᴀ ᴋᴇ ɢʀᴜᴘ➕",
                                 url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                             ),
                         ],
@@ -357,7 +357,7 @@ def info(update: Update, context: CallbackContext):
                         ],
                         [
                             InlineKeyboardButton(
-                                text="➕ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕",
+                                text="➕ᴛᴀᴍʙᴀʜᴋᴀɴ ꜱᴀʏᴀ ᴋᴇ ɢʀᴜᴘ➕",
                                 url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                             ),
                         ],
