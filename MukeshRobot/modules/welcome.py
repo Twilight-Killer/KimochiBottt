@@ -842,13 +842,13 @@ def clean_welcome(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.reply_text(
-                "Saat ini saya tidak menghapus pesan selamat datang yang lama!"
+                "Saat ini saya tidak menghapus pesan selamat datang!"
             )
         return ""
 
     if args[0].lower() in ("on", "yes"):
         sql.set_clean_welcome(str(chat.id), True)
-        update.effective_message.reply_text("I'll try to delete old welcome messages!")
+        update.effective_message.reply_text("Saya akan menghapus pesan selamat datang!")
         return (
             f"<b>{html.escape(chat.title)}:</b>\n"
             f"#CLEAN_WELCOME\n"
@@ -857,7 +857,7 @@ def clean_welcome(update: Update, context: CallbackContext) -> str:
         )
     elif args[0].lower() in ("off", "no"):
         sql.set_clean_welcome(str(chat.id), False)
-        update.effective_message.reply_text("I won't delete old welcome messages.")
+        update.effective_message.reply_text("Saya tidak akan menghapus pesan selamat datang.")
         return (
             f"<b>{html.escape(chat.title)}:</b>\n"
             f"#CLEAN_WELCOME\n"
@@ -865,7 +865,7 @@ def clean_welcome(update: Update, context: CallbackContext) -> str:
             f"Has toggled clean welcomes to <code>OFF</code>."
         )
     else:
-        update.effective_message.reply_text("I understand 'on/yes' or 'off/no' only!")
+        update.effective_message.reply_text("Saya tidak mengerti 'on/yes' atau 'off/no' hanya itu!")
         return ""
 
 
@@ -878,28 +878,28 @@ def cleanservice(update: Update, context: CallbackContext) -> str:
             var = args[0]
             if var in ("no", "off"):
                 sql.set_clean_service(chat.id, False)
-                update.effective_message.reply_text("Welcome clean service is : off")
+                update.effective_message.reply_text("Welcome clean service : off")
             elif var in ("yes", "on"):
                 sql.set_clean_service(chat.id, True)
-                update.effective_message.reply_text("Welcome clean service is : on")
+                update.effective_message.reply_text("Welcome clean service : on")
             else:
                 update.effective_message.reply_text(
                     "Invalid option", parse_mode=ParseMode.HTML
                 )
         else:
             update.effective_message.reply_text(
-                "Penggunaannya adalah <code>on</code>/<code>yes</code> atau <code>off</code>/<code>no</code>",
+                "Pilihannya <code>on</code>/<code>yes</code> atau <code>off</code>/<code>no</code>",
                 parse_mode=ParseMode.HTML,
             )
     else:
         curr = sql.clean_service(chat.id)
         if curr:
             update.effective_message.reply_text(
-                "Welcome clean service is : <code>on</code>", parse_mode=ParseMode.HTML
+                "Welcome clean service : <code>on</code>", parse_mode=ParseMode.HTML
             )
         else:
             update.effective_message.reply_text(
-                "Welcome clean service is : <code>off</code>", parse_mode=ParseMode.HTML
+                "Welcome clean service : <code>off</code>", parse_mode=ParseMode.HTML
             )
 
 
@@ -1036,7 +1036,7 @@ def __chat_settings__(chat_id, user_id):
     welcome_pref = sql.get_welc_pref(chat_id)[0]
     goodbye_pref = sql.get_gdbye_pref(chat_id)[0]
     return (
-        "Obrolan ini telah menyetel preferensi selamat datangnya `{}`.\n"
+        "Obrolan ini telah diatur preferensi selamat datang ke `{}`.\n"
         "Ini adalah pilihan selamat tinggal `{}`.".format(welcome_pref, goodbye_pref)
     )
 
