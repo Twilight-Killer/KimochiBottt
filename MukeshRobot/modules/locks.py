@@ -138,7 +138,7 @@ def unrestr_members(
 def locktypes(update, context):
     update.effective_message.reply_text(
         "\n • ".join(
-            ["Locks tersedia: "]
+            ["Kunci yang tersedia: "]
             + sorted(list(LOCK_TYPES) + list(LOCK_CHAT_RESTRICTION))
         )
     )
@@ -237,15 +237,15 @@ def lock(update, context) -> str:
             else:
                 send_message(
                     update.effective_message,
-                    "What are you trying to lock...? Try /locktypes for the list of lockables",
+                    "Apa yang kamu coba kunci...? Gunakan /locktypes untuk daftar list yang dapat dikunci",
                 )
         else:
-            send_message(update.effective_message, "What are you trying to lock...?")
+            send_message(update.effective_message, "Apa yang kamu coba kunci...?")
 
     else:
         send_message(
             update.effective_message,
-            "I am not administrator or haven't got enough rights.",
+            "Saya bukan administrator atau tidak memiliki cukup izin.",
         )
 
     return ""
@@ -274,7 +274,7 @@ def unlock(update, context) -> str:
                     if update.effective_message.chat.type == "private":
                         send_message(
                             update.effective_message,
-                            "This command is meant to use in group not in PM",
+                            "Perintah ini digunakan di grup, bukan di PM.",
                         )
                         return ""
                     chat = update.effective_chat
@@ -306,7 +306,7 @@ def unlock(update, context) -> str:
                     if update.effective_message.chat.type == "private":
                         send_message(
                             update.effective_message,
-                            "This command is meant to use in group not in PM",
+                            "Perintah ini digunakan di grup, bukan di PM.",
                         )
                         return ""
                     chat = update.effective_chat
@@ -318,7 +318,7 @@ def unlock(update, context) -> str:
                 if not can_change_info:
                     send_message(
                         update.effective_message,
-                        "I don't have permission to change group info.",
+                        "Saya tidak memiliki izin untuk mengubah info grup.",
                         parse_mode="markdown",
                     )
                     return
@@ -347,11 +347,11 @@ def unlock(update, context) -> str:
             else:
                 send_message(
                     update.effective_message,
-                    "What are you trying to unlock...? Try /locktypes for the list of lockables.",
+                    "Apa yang kamu coba buka kunci...? Gunakan /locktypes untuk daftar list yang dapat dibuka kunci.",
                 )
 
         else:
-            send_message(update.effective_message, "What are you trying to unlock...?")
+            send_message(update.effective_message, "Apa yang kamu coba buka kunci...?")
 
     return ""
 
@@ -510,7 +510,7 @@ def list_locks(update, context):
         if update.effective_message.chat.type == "private":
             send_message(
                 update.effective_message,
-                "This command is meant to use in group not in PM",
+                "Perintah ini digunakan di grup, bukan di PM.",
             )
             return ""
         chat = update.effective_chat
