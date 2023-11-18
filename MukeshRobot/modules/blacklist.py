@@ -39,7 +39,7 @@ def blacklist(update, context):
         chat_id = update.effective_chat.id
         chat_name = chat.title
 
-    filter_list = "Current blacklisted words in <b>{}</b>:\n".format(chat_name)
+    filter_list = "Kata-kata yang masuk blacklist saat ini di <b>{}</b>:\n".format(chat_name)
 
     all_blacklisted = sql.get_chat_blacklist(chat_id)
 
@@ -55,7 +55,7 @@ def blacklist(update, context):
 
     split_text = split_message(filter_list)
     for text in split_text:
-        if filter_list == "Current blacklisted words in <b>{}</b>:\n".format(
+        if filter_list == "Kata-kata yang masuk blacklist saat ini di <b>{}</b>:\n".format(
             html.escape(chat_name)
         ):
             send_message(
@@ -97,7 +97,7 @@ def add_blacklist(update, context):
         if len(to_blacklist) == 1:
             send_message(
                 update.effective_message,
-                "Added blacklist <code>{}</code> in chat: <b>{}</b>!".format(
+                "Menambahkan blacklist <code>{}</code> di chat: <b>{}</b>!".format(
                     html.escape(to_blacklist[0]), html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -115,7 +115,7 @@ def add_blacklist(update, context):
     else:
         send_message(
             update.effective_message,
-            "Tell me which words you would like to add in blacklist.",
+            "Beri tahu saya kata mana yang ingin Anda tambahkan ke blacklist.",
         )
 
 
@@ -153,7 +153,7 @@ def unblacklist(update, context):
             if successful:
                 send_message(
                     update.effective_message,
-                    "Removed <code>{}</code> from blacklist in <b>{}</b>!".format(
+                    "Dihapus <code>{}</code> dari daftar blacklist di dalam <b>{}</b>!".format(
                         html.escape(to_unblacklist[0]), html.escape(chat_name)
                     ),
                     parse_mode=ParseMode.HTML,
@@ -166,7 +166,7 @@ def unblacklist(update, context):
         elif successful == len(to_unblacklist):
             send_message(
                 update.effective_message,
-                "Removed <code>{}</code> from blacklist in <b>{}</b>!".format(
+                "Dihapus <code>{}</code> dari daftar blacklist di dalam <b>{}</b>!".format(
                     successful, html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -182,8 +182,8 @@ def unblacklist(update, context):
         else:
             send_message(
                 update.effective_message,
-                "Removed <code>{}</code> from blacklist. {} did not exist, "
-                "so were not removed.".format(
+                "Dihapus <code>{}</code> dari blacklist. {} tidak ada, "
+                "jadi tidak dihapus.".format(
                     successful, len(to_unblacklist) - successful
                 ),
                 parse_mode=ParseMode.HTML,
@@ -191,7 +191,7 @@ def unblacklist(update, context):
     else:
         send_message(
             update.effective_message,
-            "Tell me which words you would like to remove from blacklist!",
+            "Beri tahu saya kata mana yang ingin Anda tambahkan ke blacklist.",
         )
 
 
@@ -213,7 +213,7 @@ def blacklist_mode(update, context):
         if update.effective_message.chat.type == "private":
             send_message(
                 update.effective_message,
-                "This command can be only used in group not in PM",
+                "Perintah ini hanya dapat digunakan di grup, bukan di PM",
             )
             return ""
         chat = update.effective_chat
@@ -272,7 +272,7 @@ Examples of time value: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 weeks.
         else:
             send_message(
                 update.effective_message,
-                "I only understand: off/del/warn/ban/kick/mute/tban/tmute!",
+                "Saya hanya mengerti: off/del/warn/ban/kick/mute/tban/tmute!",
             )
             return ""
         if conn:
@@ -314,7 +314,7 @@ Examples of time value: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 weeks.
                 settypeblacklist, chat_name
             )
         else:
-            text = "Current blacklistmode: *{}*.".format(settypeblacklist)
+            text = "Mode blacklist saat ini: *{}*.".format(settypeblacklist)
         send_message(update.effective_message, text, parse_mode=ParseMode.MARKDOWN)
     return ""
 
