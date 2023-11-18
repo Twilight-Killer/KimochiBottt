@@ -454,7 +454,7 @@ def build_lock_message(chat_id):
     locklist = []
     permslist = []
     if locks:
-        res += "*" + "These are the current locks in this Chat:" + "*"
+        res += "*" + "Ini adalah izin obrolan saat ini:" + "*"
         if locks:
             locklist.append("sticker = `{}`".format(locks.sticker))
             locklist.append("audio = `{}`".format(locks.audio))
