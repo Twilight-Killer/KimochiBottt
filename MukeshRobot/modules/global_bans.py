@@ -252,9 +252,9 @@ def gban(update: Update, context: CallbackContext):
 
     if gban_time > 60:
         gban_time = round((gban_time / 60), 2)
-        message.reply_text("Pengguna sudah di global banned!", parse_mode=ParseMode.HTML)
+        message.reply_text("Done! User di global banned.", parse_mode=ParseMode.HTML)
     else:
-        message.reply_text("Pengguna sudah di global banned!", parse_mode=ParseMode.HTML)
+        message.reply_text("Done! User di global banned.", parse_mode=ParseMode.HTML)
 
     try:
         bot.send_message(
