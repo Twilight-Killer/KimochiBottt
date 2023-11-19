@@ -171,7 +171,7 @@ def gban(update: Update, context: CallbackContext):
         chat_origin = "<b>{}</b>\n".format(chat.id)
 
     log_message = (
-        f"ɢʟᴏʙᴀʟ ʙᴀɴɴᴇᴅ\n"
+        f"#ɢʟᴏʙᴀʟ_ʙᴀɴɴᴇᴅ\n"
         f"<b>ᴅᴀʀɪ ɢʀᴜᴘ :</b> <code>{chat_origin}</code>\n"
         f"<b>ᴀᴅᴍɪɴ:</b> {mention_html(user.id, user.first_name)}\n"
         f"<b>ʙᴀɴɴᴇᴅ ᴜsᴇʀ:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
