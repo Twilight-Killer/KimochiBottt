@@ -252,9 +252,9 @@ def gban(update: Update, context: CallbackContext):
 
     if gban_time > 60:
         gban_time = round((gban_time / 60), 2)
-        message.reply_text("Pengguna Di Global Banned! Pengguna yang sudah di Global Banned akan di blokir di semua grup jika saya admin disuatu grup itu.", parse_mode=ParseMode.HTML)
+        message.reply_text("Pengguna sudah di global banned!", parse_mode=ParseMode.HTML)
     else:
-        message.reply_text("Pengguna Di Global Banned! Pengguna yang sudah di Global Banned akan di blokir di semua grup jika saya admin disuatu grup itu.", parse_mode=ParseMode.HTML)
+        message.reply_text("Pengguna sudah di global banned!", parse_mode=ParseMode.HTML)
 
     try:
         bot.send_message(
@@ -416,8 +416,8 @@ def check_and_ban(update, user_id, should_message=True):
         if should_message:
             text = (
                 f"<b>Peringatan</b>: pengguna ini diblokir secara global.\n"
-                f"<code>Saya melarang nya disini!</code>.\n"
-                f"<b>Banding</b>: @{SUPPORT_CHAT}\n"
+                f"<code>Saya telah melarang nya disini!</code>.\n"
+                f"<b>Group Banding</b>: @{SUPPORT_CHAT}\n"
                 f"<b>ID Pengguna</b>: <code>{user_id}</code>"
             )
             user = sql.get_gbanned_user(user_id)
@@ -472,10 +472,10 @@ def gbanstat(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "Give me some arguments to choose a setting! on/off, yes/no!\n\n"
-            "Your current setting is: {}\n"
-            "When True, any gbans that happen will also happen in your group. "
-            "When False, they won't, leaving you at the possible mercy of "
+            "Beri saya beberapa argumen untuk memilih pengaturan! on/off, yes/no!\n\n"
+            "Pengaturan Anda saat ini adalah: {}\n"
+            "Jika True, semua gban yang terjadi juga akan terjadi di grup Anda. "
+            "Jika False, mereka tidak akan melakukannya, meninggalkan Anda pada kemungkinan belas kasihan "
             "spammers.".format(sql.does_chat_gban(update.effective_chat.id))
         )
 
