@@ -109,8 +109,8 @@ def ban(update: Update, context: CallbackContext) -> str:
 
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         reply = (
-            f"<code>⚠️</code><b>ᴜꜱᴇʀ ʙᴀɴɴᴇᴅ</b>\n"
-            f"<code> </code><b>•  ʙᴀɴɴᴇᴅ ʙʏ:</b> {mention_html(user.id, user.first_name)}\n"
+            f"<code>⚠️</code><b>  ᴜꜱᴇʀ ᴅɪʙʟᴏᴋɪʀ</b>\n"
+            f"<code> </code><b>•  ᴅɪʙʟᴏᴋɪʀ ᴏʟᴇʜ:</b> {mention_html(user.id, user.first_name)}\n"
             f"<code> </code><b>•  ᴜsᴇʀ:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
         )
         if reason:
@@ -123,7 +123,7 @@ def ban(update: Update, context: CallbackContext) -> str:
             # Do not reply
             if silent:
                 return log
-            message.reply_text("ʙᴀɴɴᴇᴅ !", quote=False)
+            message.reply_text("ᴅɪʙʟᴏᴋɪʀ !", quote=False)
             return log
         else:
             LOGGER.warning(update)
