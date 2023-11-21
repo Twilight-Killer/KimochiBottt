@@ -415,7 +415,7 @@ def check_and_ban(update, user_id, should_message=True):
         update.effective_chat.kick_member(user_id)
         if should_message:
             text = (
-                f"<b>Peringatan</b>: pengguna ini diblokir secara global.\n"
+                f"<b>Peringatan</b>: Pengguna ini diblokir secara global!\n"
                 f"<code>Saya telah melarang nya disini!</code>.\n"
                 f"<b>Group Banding</b>: @{SUPPORT_CHAT}\n"
                 f"<b>ID Pengguna</b>: <code>{user_id}</code>"
