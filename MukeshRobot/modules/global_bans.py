@@ -416,7 +416,7 @@ def check_and_ban(update, user_id, should_message=True):
         if should_message:
             text = (
                 f"<b>Peringatan</b>: Pengguna ini diblokir secara global!\n"
-                f"<code>Saya telah melarang nya disini!</code>.\n"
+                f"<code>Saya telah melarang nya disini.</code>.\n"
                 f"<b>Group Banding</b>: @{SUPPORT_CHAT}\n"
                 f"<b>ID Pengguna</b>: <code>{user_id}</code>"
             )
