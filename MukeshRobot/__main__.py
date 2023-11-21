@@ -930,7 +930,7 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = prev_match.group(1)
             curr_page = int(prev_match.group(2))
             chat = bot.get_chat(chat_id)
-            query.message.reply_text("""Hai, yang di sana!  Ada beberapa pengaturan untuk {} - silakan pilih apa "
+            query.message.reply_text("""Hai, Ada beberapa pengaturan untuk {} - silakan pilih apa "
                 kamu tertarik.""".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
@@ -944,7 +944,7 @@ def settings_button(update: Update, context: CallbackContext):
             next_page = int(next_match.group(2))
             chat = bot.get_chat(chat_id)
             query.message.reply_text(text=
-                """Hai, yang di sana!  Ada beberapa pengaturan untuk {} - silakan pilih apa 
+                """Hai, Ada beberapa pengaturan untuk {} - silakan pilih apa 
                 kamu tertarik.""".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
@@ -956,7 +956,7 @@ def settings_button(update: Update, context: CallbackContext):
         elif back_match:
             chat_id = back_match.group(1)
             chat = bot.get_chat(chat_id)
-            query.message.reply_text("""Hai, yang di sana!  Ada beberapa pengaturan untuk {} - silakan pilih apa 
+            query.message.reply_text("""Hai, Ada beberapa pengaturan untuk {} - silakan pilih apa 
                 kamu tertarik.""".format(escape_markdown(chat.title)),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
@@ -1066,7 +1066,7 @@ def main():
                 [
                     [
                         InlineKeyboardButton(
-                            text="➕ᴛᴀᴍʙᴀʜᴋᴀɴ ꜱᴀʏᴀ ᴋᴇ ᴏʙʀᴏʟᴀɴ ᴀɴᴅᴀ➕",
+                            text="➕ᴛᴀᴍʙᴀʜᴋᴀɴ ᴋᴇ ᴏʙʀᴏʟᴀɴ➕",
                             url="https://t.me/Kimochi_robot?startgroup=true"
                             )
                        ]
