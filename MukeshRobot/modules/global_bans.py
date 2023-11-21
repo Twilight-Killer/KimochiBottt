@@ -135,7 +135,7 @@ def gban(update: Update, context: CallbackContext):
 
         if not reason:
             message.reply_text(
-                "Pengguna ini sudah di-banned;  Saya akan mengubah alasannya, tetapi Anda belum memberi saya satu pun..."
+                "Pengguna ini sudah di global banned; Saya akan mengubah alasannya, tetapi Anda belum memberi saya satu pun..."
             )
             return
 
@@ -243,7 +243,7 @@ def gban(update: Update, context: CallbackContext):
         send_to_list(
             bot,
             DRAGONS + DEMONS,
-            f"Global Banned Done! (Pengguna banned dalam <code>{gbanned_chats}</code> obrolan)",
+            f"Global Banned Done! (Pengguna di global banned dalam <code>{gbanned_chats}</code> obrolan)",
             html=True,
         )
 
@@ -252,9 +252,9 @@ def gban(update: Update, context: CallbackContext):
 
     if gban_time > 60:
         gban_time = round((gban_time / 60), 2)
-        message.reply_text("Done! User di global banned.", parse_mode=ParseMode.HTML)
+        message.reply_text("Done! Pengguna di global banned.", parse_mode=ParseMode.HTML)
     else:
-        message.reply_text("Done! User di global banned.", parse_mode=ParseMode.HTML)
+        message.reply_text("Done! Pengguna di global banned.", parse_mode=ParseMode.HTML)
 
     try:
         bot.send_message(
