@@ -282,7 +282,7 @@ def ungban(update: Update, context: CallbackContext):
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "Tampaknya Anda tidak menyebut pengguna atau ID yang diberikan salah.."
         )
         return
 
@@ -474,7 +474,7 @@ def gbanstat(update: Update, context: CallbackContext):
         update.effective_message.reply_text(
             "Beri saya beberapa argumen untuk memilih pengaturan! on/off, yes/no!\n\n"
             "Pengaturan Anda saat ini adalah: {}\n"
-            "Jika True, semua gban yang terjadi juga akan terjadi di grup Anda. "
+            "Jika True, semua global banned yang terjadi juga akan terjadi di grup Anda. "
             "Jika False, mereka tidak akan melakukannya, meninggalkan Anda pada kemungkinan belas kasihan "
             "spammers.".format(sql.does_chat_gban(update.effective_chat.id))
         )
