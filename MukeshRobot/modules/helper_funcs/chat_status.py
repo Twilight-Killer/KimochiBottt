@@ -115,8 +115,8 @@ def dev_plus(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "Ini adalah perintah yang dibatasi pencipta."
-                " Anda tidak di izinkan untuk menjalankan ini."
+                "Perintah ini dibatasi."
+                " Anda tidak di izinkan untuk menjalankannya."
             )
 
     return is_dev_plus_func
@@ -140,7 +140,7 @@ def sudo_plus(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "Anda bukan admin untuk melakukan ini! Anda ingin saya pukul?."
+                "Anda bukan admin untuk menjalankannya! Anda ingin saya pukul?."
             )
 
     return is_sudo_plus_func
@@ -177,7 +177,7 @@ def whitelist_plus(func):
             return func(update, context, *args, **kwargs)
         else:
             update.effective_message.reply_text(
-                f"Anda tidak memiliki akses untuk menggunakan ini.\nKunjungi @{SUPPORT_CHAT}"
+                f"Anda tidak memiliki akses untuk menggunakannya.\nKunjungi @{SUPPORT_CHAT}"
             )
 
     return is_whitelist_plus_func
@@ -201,7 +201,7 @@ def user_admin(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "Anda bukan admin untuk melakukan ini! Anda ingin saya pukul?"
+                "Anda bukan admin untuk menjalankannya! Anda ingin saya pukul?"
             )
 
     return is_admin
