@@ -70,7 +70,7 @@ def list_handlers(update, context):
 
     if not all_handlers:
         send_message(
-            update.effective_message, "Tidak ada filter yang disimpan‌‌ {}!".format(chat_name)
+            update.effective_message, "Tidak ada filter yang disimpan‌‌ di {}!".format(chat_name)
         )
         return
 
@@ -117,7 +117,7 @@ def filters(update, context):
     if not msg.reply_to_message and len(args) < 2:
         send_message(
             update.effective_message,
-            "Harap berikan kata kunci keyboard untuk filter membalas!!",
+            "Harap berikan kata kunci keyboard untuk filter membalas!",
         )
         return
 
@@ -125,7 +125,7 @@ def filters(update, context):
         if len(args) < 2:
             send_message(
                 update.effective_message,
-                "Harap berikan kata kunci keyboard untuk filter membalas!!",
+                "Harap berikan kata kunci keyboard untuk filter membalas!",
             )
             return
         else:
