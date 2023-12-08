@@ -284,7 +284,7 @@ def clear(update: Update, context: CallbackContext):
         notename = args[0].lower()
 
         if sql.rm_note(chat_id, notename):
-            update.effective_message.reply_text("Successfully removed note.")
+            update.effective_message.reply_text("Berhasil menghapus catatan.")
         else:
             update.effective_message.reply_text("That's not a note in my database!")
 
@@ -295,7 +295,7 @@ def clearall(update: Update, context: CallbackContext):
     member = chat.get_member(user.id)
     if member.status != "creator" :
         update.effective_message.reply_text(
-            "Only the chat owner can clear all notes at once."
+            "Hanya pemilik obrolan yang dapat menghapus semua catatan sekaligus."
         )
     else:
         buttons = InlineKeyboardMarkup(
@@ -327,7 +327,7 @@ def clearall_btn(update: Update, context: CallbackContext):
                 for notename in note_list:
                     note = notename.name.lower()
                     sql.rm_note(chat.id, note)
-                message.edit_text("Deleted all notes.")
+                message.edit_text("Menghapus semua catatan.")
             except BadRequest:
                 return
 
@@ -363,7 +363,7 @@ def list_notes(update: Update, context: CallbackContext):
         msg += note_name
 
     if not note_list:
-        update.effective_message.reply_text("No notes in this chat!")
+        update.effective_message.reply_text("Tidak ada catatan dalam obrolan ini!")
 
     elif len(msg) != 0:
         update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
@@ -486,7 +486,7 @@ def __migrate__(old_chat_id, new_chat_id):
 
 def __chat_settings__(chat_id, user_id):
     notes = sql.get_all_chat_notes(chat_id)
-    return f"There are `{len(notes)}` notes in this chat."
+    return f"Ada `{len(notes)}` catatan dalam obrolan ini."
 
 
 __help__ = """
