@@ -46,7 +46,7 @@ love = random.choice(loveShayri)
 @pbot.on_message(filters.command("loveshayri"))
 
 async def love_shayri(b,m):
-    "dont remove this line \n credit  |n github : noob-mukesh"
+    "dont remove this line \n credit  |n github : DarkiezZzz"
     await m.reply_text(love)
 __mod_name__="​​Sʜᴀʏʀɪ"
 __help__="""ꜱᴇɴᴅ ʀᴀɴᴅᴏᴍ ꜱʜᴀʏʀɪ
