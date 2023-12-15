@@ -422,7 +422,7 @@ def check_and_ban(update, user_id, should_message=True):
             )
             user = sql.get_gbanned_user(user_id)
             if user.reason:
-                text += f"\n<b>Alasan Larangan:</b> <code>{html.escape(user.reason)}</code>"
+                text += f"\n<b>Alasan:</b> <code>{html.escape(user.reason)}</code>"
             update.effective_message.reply_text(text, parse_mode=ParseMode.HTML)
 
 
