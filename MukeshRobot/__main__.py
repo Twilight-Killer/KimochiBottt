@@ -460,7 +460,7 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="🤖 ᴀꜱꜱɪꜱᴛᴇɴᴛ", callback_data="help_back"),
+                        InlineKeyboardButton(text="🤖 ᴀꜱɪꜱᴛᴇɴ", callback_data="help_back"),
                         InlineKeyboardButton(text="ᴍᴜꜱɪᴋ 🎧", callback_data="Music_")
                     ],
                     [
