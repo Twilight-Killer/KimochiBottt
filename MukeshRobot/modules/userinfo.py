@@ -256,7 +256,7 @@ def info(update: Update, context: CallbackContext):
             if status in {"left", "kicked"}:
                 text += _stext.format("ᴛɪᴅᴀᴋ ᴅɪꜱɪɴɪ")
             elif status == "member":
-                text += _stext.format("ᴅᴇᴛᴇᴄᴛᴇᴅ")
+                text += _stext.format("ᴀᴅᴀ ᴅɪꜱɪɴɪ")
             elif status in {"administrator", "creator"}:
                 text += _stext.format("ᴀᴅᴍɪɴ")
     if user_id not in [bot.id, 777000, 1087968824]:
