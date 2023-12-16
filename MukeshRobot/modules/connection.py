@@ -166,11 +166,11 @@ def connect_chat(update, context):
                     )
                 )
             else:
-                text = "Berikan ID obrolan atau tag untuk terhubung!"
+                text = "Berikan ID group atau username group untuk terhubung!"
             if gethistory:
                 text += "\n\n*History koneksi:*\n"
                 text += "╒═══「 *Info* 」\n"
-                text += "│  Sorted: `Terbaru`\n"
+                text += "│  Disortir: `Terbaru`\n"
                 text += "│\n"
                 buttons = [buttons]
                 for x in sorted(gethistory.keys(), reverse=True):
