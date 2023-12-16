@@ -838,7 +838,7 @@ def get_help(update: Update, context: CallbackContext):
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
         module = args[1].lower()
         text = (
-            "Berikut adalah bantuan yang tersedia untuk *{}* module:\n".format(
+            "Berikut adalah bantuan yang tersedia untuk *{}* :\n".format(
                 HELPABLE[module].__mod_name__
             )
             + HELPABLE[module].__help__
@@ -880,7 +880,7 @@ def send_settings(chat_id, user_id, user=False):
             chat_name = dispatcher.bot.getChat(chat_id).title
             dispatcher.bot.send_message(
                 user_id,
-                text="Modul mana yang ingin Anda periksa {}'s pengaturan untuk?".format(
+                text="Peraturan mana yang ingin Anda periksa di {} ?".format(
                     chat_name
                 ),
                 reply_markup=InlineKeyboardMarkup(
@@ -909,7 +909,7 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = mod_match.group(1)
             module = mod_match.group(2)
             chat = bot.get_chat(chat_id)
-            text = "*{}* memiliki pengaturan berikut untuk *{}* module:\n\n".format(
+            text = "*{}* memiliki pengaturan untuk *{}* :\n\n".format(
                 escape_markdown(chat.title), CHAT_SETTINGS[module].__mod_name__
             ) + CHAT_SETTINGS[module].__chat_settings__(chat_id, user.id)
             query.message.reply_text(text,
@@ -930,7 +930,7 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = prev_match.group(1)
             curr_page = int(prev_match.group(2))
             chat = bot.get_chat(chat_id)
-            query.message.reply_text("""Hai, Ada beberapa pengaturan untuk {} - silakan pilih apa "
+            query.message.reply_text("""Ada beberapa pengaturan untuk {} - silakan pilih apa "
                 kamu tertarik.""".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
@@ -944,7 +944,7 @@ def settings_button(update: Update, context: CallbackContext):
             next_page = int(next_match.group(2))
             chat = bot.get_chat(chat_id)
             query.message.reply_text(text=
-                """Hai, Ada beberapa pengaturan untuk {} - silakan pilih apa 
+                """Ada beberapa pengaturan untuk {} - silakan pilih apa 
                 kamu tertarik.""".format(chat.title),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(
@@ -956,7 +956,7 @@ def settings_button(update: Update, context: CallbackContext):
         elif back_match:
             chat_id = back_match.group(1)
             chat = bot.get_chat(chat_id)
-            query.message.reply_text("""Hai, Ada beberapa pengaturan untuk {} - silakan pilih apa 
+            query.message.reply_text("""Ada beberapa pengaturan untuk {} - silakan pilih apa 
                 kamu tertarik.""".format(escape_markdown(chat.title)),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
