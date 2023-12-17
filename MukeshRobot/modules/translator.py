@@ -38,7 +38,7 @@ def totranslate(update: Update, context: CallbackContext) -> None:
         dest = "en"
     translation = trans(to_translate, sourcelang=source, targetlang=dest)
     reply = (
-        f"<b>ᴛʀᴀɴꜱʟᴀᴛᴇ ᴅᴀʀɪ {source} ᴋᴇ {dest}</b> :\n"
+        f"<b>ᴅɪᴛᴇʀᴊᴇᴍᴀʜᴋᴀɴ ᴅᴀʀɪ {source} ᴋᴇ {dest}</b> :\n"
         f"<code>{translation.text}</code>"
     )
 
