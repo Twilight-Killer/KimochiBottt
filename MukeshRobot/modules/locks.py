@@ -237,10 +237,10 @@ def lock(update, context) -> str:
             else:
                 send_message(
                     update.effective_message,
-                    "Apa yang kamu coba kunci...? Gunakan /locktypes untuk daftar list yang dapat dikunci",
+                    "Apa yang kamu coba kunci? Gunakan /locktypes untuk daftar list yang dapat dikunci",
                 )
         else:
-            send_message(update.effective_message, "Apa yang kamu coba kunci...?")
+            send_message(update.effective_message, "Apa yang kamu coba kunci?")
 
     else:
         send_message(
@@ -347,11 +347,11 @@ def unlock(update, context) -> str:
             else:
                 send_message(
                     update.effective_message,
-                    "Apa yang kamu coba buka kunci...? Gunakan /locktypes untuk daftar list yang dapat dibuka kunci.",
+                    "Apa yang kamu coba buka kunci? Gunakan /locktypes untuk daftar list yang dapat dibuka kunci.",
                 )
 
         else:
-            send_message(update.effective_message, "Apa yang kamu coba buka kunci...?")
+            send_message(update.effective_message, "Apa yang kamu coba buka kunci?")
 
     return ""
 
