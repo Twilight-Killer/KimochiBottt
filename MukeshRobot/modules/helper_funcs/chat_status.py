@@ -115,8 +115,8 @@ def dev_plus(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "Perintah ini dibatasi."
-                " Anda tidak di izinkan untuk menjalankannya."
+                "Anda tidak dapat menjalankan"
+                " perintah ini!"
             )
 
     return is_dev_plus_func
@@ -140,7 +140,7 @@ def sudo_plus(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "Anda bukan admin untuk menjalankannya! Anda ingin saya pukul?."
+                "Anda harus menjadi admin untuk melakukan ini."
             )
 
     return is_sudo_plus_func
@@ -201,7 +201,7 @@ def user_admin(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "Anda bukan admin untuk menjalankannya! Anda ingin saya pukul?"
+                "Anda harus menjadi admin untuk melakukan ini."
             )
 
     return is_admin
