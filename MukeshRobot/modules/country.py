@@ -16,7 +16,7 @@ async def msg(event):
     try:
         a = country.info()
     except:
-        await event.reply("Country Not Available Currently")
+        await event.reply("Negara Tidak Tersedia Saat Ini")
     name = a.get("name")
     bb = a.get("altSpellings")
     hu = ""
