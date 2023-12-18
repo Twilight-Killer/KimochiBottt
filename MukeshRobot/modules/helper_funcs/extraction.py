@@ -48,8 +48,8 @@ def extract_user_and_text(
         user_id = get_user_id(user)
         if not user_id:
             message.reply_text(
-                "No idea who this user is. You'll be able to interact with them if "
-                "you reply to that person's message instead, or forward one of that user's messages."
+                "Tidak tahu siapa pengguna ini. Anda akan dapat berinteraksi dengan mereka jika "
+                "Anda bisa membalas pesan orang tersebut, atau meneruskan salah satu pesan pengguna tersebut."
             )
             return None, None
 
@@ -76,9 +76,9 @@ def extract_user_and_text(
     except BadRequest as excp:
         if excp.message in ("User_id_invalid", "Chat not found"):
             message.reply_text(
-                "I don't seem to have interacted with this user before - please forward a message from "
-                "them to give me control! (like a voodoo doll, I need a piece of them to be able "
-                "to execute certain commands...)"
+                "Sepertinya saya tidak punya kontrol atas user itu, "
+                "atau ID-nya tidak valid. "
+                "Jika kamu membalas salah satu pesan dia, aku akan bisa berinteraksi dengannya."
             )
         else:
             LOGGER.exception("Exception %s on user %s", excp.message, user_id)
@@ -122,8 +122,8 @@ def extract_unt_fedban(
         user_id = get_user_id(user)
         if not user_id and not isinstance(user_id, int):
             message.reply_text(
-                "I don't have that user in my db.  "
-                "You'll be able to interact with them if you reply to that person's message instead, or forward one of that user's messages."
+                "Saya tidak memiliki pengguna itu di db saya.  "
+                "Anda akan dapat berinteraksi dengan mereka jika Anda membalas pesan orang tersebut, atau meneruskan salah satu pesan pengguna tersebut."
             )
             return None, None
 
@@ -152,9 +152,9 @@ def extract_unt_fedban(
             user_id, int
         ):
             message.reply_text(
-                "I don't seem to have interacted with this user before "
-                "please forward a message from them to give me control! "
-                "(like a voodoo doll, I need a piece of them to be able to execute certain commands...)"
+                "Sepertinya saya tidak punya kontrol atas user itu, "
+                "atau ID-nya tidak valid. "
+                "Jika kamu membalas salah satu pesan dia, aku akan bisa berinteraksi dengannya."
             )
             return None, None
         elif excp.message != "Chat not found":
