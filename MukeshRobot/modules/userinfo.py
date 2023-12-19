@@ -249,7 +249,7 @@ def info(update: Update, context: CallbackContext):
     text += f"\n➻ <b>ʟɪɴᴋ:</b> {mention_html(user.id, 'klik')}"
 
     if chat.type != "private" and user_id != bot.id:
-        _stext = "\n➻ <b>ᴋᴇʜᴀᴅɪʀᴀɴ:</b> <code>{}</code>"
+        _stext = "\n➻ <b>ꜱᴛᴀᴛᴜꜱ:</b> <code>{}</code>"
 
         status = status = bot.get_chat_member(chat.id, user.id).status
         if status:
