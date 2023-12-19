@@ -33,7 +33,7 @@ def blackliststicker(update: Update, context: CallbackContext):
         chat_id = update.effective_chat.id
         chat_name = chat.title
 
-    sticker_list = "<b>List blacklisted stickers currently in {}:</b>\n".format(
+    sticker_list = "<b>Daftar stiker yang masuk daftar hitam saat ini di {}:</b>\n".format(
         chat_name
     )
 
@@ -48,12 +48,12 @@ def blackliststicker(update: Update, context: CallbackContext):
 
     split_text = split_message(sticker_list)
     for text in split_text:
-        if sticker_list == "<b>List blacklisted stickers currently in {}:</b>\n".format(
+        if sticker_list == "<b>Daftar stiker yang masuk daftar hitam saat ini di {}:</b>\n".format(
             chat_name
         ).format(html.escape(chat_name)):
             send_message(
                 update.effective_message,
-                "There are no blacklist stickers in <b>{}</b>!".format(
+                "Tidak ada stiker daftar hitam di <b>{}</b>!".format(
                     html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -96,7 +96,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
             except BadRequest:
                 send_message(
                     update.effective_message,
-                    "Sticker `{}` can not be found!".format(trigger),
+                    "Sticker `{}` tidak ditemukan!".format(trigger),
                     parse_mode="markdown",
                 )
 
@@ -106,7 +106,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
         if len(to_blacklist) == 1:
             send_message(
                 update.effective_message,
-                "Sticker <code>{}</code> added to blacklist stickers in <b>{}</b>!".format(
+                "Sticker <code>{}</code> ditambahkan ke dalam daftar hitam di <b>{}</b>!".format(
                     html.escape(to_blacklist[0]), html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -114,7 +114,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
         else:
             send_message(
                 update.effective_message,
-                "<code>{}</code> stickers added to blacklist sticker in <b>{}</b>!".format(
+                "<code>{}</code> stickers ditambahkan ke dalam daftar hitam di <b>{}</b>!".format(
                     added, html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -132,7 +132,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
         except BadRequest:
             send_message(
                 update.effective_message,
-                "Sticker `{}` can not be found!".format(trigger),
+                "Sticker `{}` tidak ditemukan!".format(trigger),
                 parse_mode="markdown",
             )
 
@@ -141,7 +141,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
 
         send_message(
             update.effective_message,
-            "Sticker <code>{}</code> added to blacklist stickers in <b>{}</b>!".format(
+            "Sticker <code>{}</code> ditambahkan ke dalam daftae hitam di <b>{}</b>!".format(
                 trigger, html.escape(chat_name)
             ),
             parse_mode=ParseMode.HTML,
@@ -149,7 +149,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
     else:
         send_message(
             update.effective_message,
-            "Tell me what stickers you want to add to the blacklist.",
+            "Beri tahu saya stiker apa yang ingin Anda tambahkan ke daftar hitam.",
         )
 
 
@@ -188,20 +188,20 @@ def unblackliststicker(update: Update, context: CallbackContext):
             if successful:
                 send_message(
                     update.effective_message,
-                    "Sticker <code>{}</code> deleted from blacklist in <b>{}</b>!".format(
+                    "Sticker <code>{}</code> dihapus dari daftar hitam di <b>{}</b>!".format(
                         html.escape(to_unblacklist[0]), html.escape(chat_name)
                     ),
                     parse_mode=ParseMode.HTML,
                 )
             else:
                 send_message(
-                    update.effective_message, "This sticker is not on the blacklist...!"
+                    update.effective_message, "Stiker ini tidak ada dalam daftar hitam."
                 )
 
         elif successful == len(to_unblacklist):
             send_message(
                 update.effective_message,
-                "Sticker <code>{}</code> deleted from blacklist in <b>{}</b>!".format(
+                "Sticker <code>{}</code> dihapus dari daftar hitam di <b>{}</b>!".format(
                     successful, html.escape(chat_name)
                 ),
                 parse_mode=ParseMode.HTML,
@@ -210,14 +210,14 @@ def unblackliststicker(update: Update, context: CallbackContext):
         elif not successful:
             send_message(
                 update.effective_message,
-                "None of these stickers exist, so they cannot be removed.",
+                "Stiker ini tidak ada, jadi tidak bisa dihapus.",
                 parse_mode=ParseMode.HTML,
             )
 
         else:
             send_message(
                 update.effective_message,
-                "Sticker <code>{}</code> deleted from blacklist. {} did not exist, so it's not deleted.".format(
+                "Sticker <code>{}</code> dihapus dari daftar hitam. {} tidak ada, jadi tidak dihapus.".format(
                     successful, len(to_unblacklist) - successful
                 ),
                 parse_mode=ParseMode.HTML,
@@ -232,7 +232,7 @@ def unblackliststicker(update: Update, context: CallbackContext):
         if success:
             send_message(
                 update.effective_message,
-                "Sticker <code>{}</code> deleted from blacklist in <b>{}</b>!".format(
+                "Sticker <code>{}</code> dihapus dari daftar hitam di <b>{}</b>!".format(
                     trigger, chat_name
                 ),
                 parse_mode=ParseMode.HTML,
@@ -240,12 +240,12 @@ def unblackliststicker(update: Update, context: CallbackContext):
         else:
             send_message(
                 update.effective_message,
-                "{} not found on blacklisted stickers...!".format(trigger),
+                "{} tidak ditemukan stiker yang masuk daftar hitam.".format(trigger),
             )
     else:
         send_message(
             update.effective_message,
-            "Tell me what stickers you want to add to the blacklist.",
+            "Beri tahu saya stiker apa yang ingin Anda tambahkan ke daftar hitam.",
         )
 
 
@@ -264,7 +264,7 @@ def blacklist_mode(update: Update, context: CallbackContext):
     else:
         if update.effective_message.chat.type == "private":
             send_message(
-                update.effective_message, "You can do this command in groups, not PM"
+                update.effective_message, "Kamu hanya dapat melakukan perintah ini di group, bukan di PM"
             )
             return ""
         chat = update.effective_chat
@@ -309,11 +309,11 @@ def blacklist_mode(update: Update, context: CallbackContext):
         else:
             send_message(
                 update.effective_message,
-                "I only understand off/del/warn/ban/kick/mute/tban/tmute!",
+                "Saya hanya mengerti off/del/warn/ban/kick/mute/tban/tmute!",
             )
             return
         if conn:
-            text = "Blacklist sticker mode changed, users will be `{}` at *{}*!".format(
+            text = "Mode stiker daftar hitam diubah, pengguna akan `{}` at *{}*!".format(
                 settypeblacklist, chat_name
             )
         else:
