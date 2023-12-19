@@ -141,7 +141,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
 
         send_message(
             update.effective_message,
-            "Sticker <code>{}</code> ditambahkan ke dalam daftae hitam di <b>{}</b>!".format(
+            "Sticker <code>{}</code> ditambahkan ke dalam daftar hitam di <b>{}</b>!".format(
                 trigger, html.escape(chat_name)
             ),
             parse_mode=ParseMode.HTML,
