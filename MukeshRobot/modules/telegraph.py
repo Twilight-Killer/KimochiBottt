@@ -9,7 +9,7 @@ from MukeshRobot.events import register
 
 Mukesh = "Controller"
 TMP_DOWNLOAD_DIRECTORY = "./"
-telegraph = Telegraph(domain="graph.org")
+telegraph = Telegraph(domain="telegra.ph")
 r = telegraph.create_account(short_name=Mukesh)
 auth_url = r["auth_url"]
 
@@ -45,7 +45,7 @@ async def _(event):
                 (end - start).seconds
                 os.remove(downloaded_file_name)
                 await h.edit(
-                    "Uploaded to https://graph.org{})".format(media_urls[0]),
+                    "Uploaded to https://telegra.ph{})".format(media_urls[0]),
                     link_preview=True,
                 )
         elif input_str == "t":
@@ -71,7 +71,7 @@ async def _(event):
             end = datetime.now()
             ms = (end - start).seconds
             await event.reply(
-                "Pasted to https://graph.org/{} in {} seconds.".format(
+                "Pasted to https://telegra.ph/{} in {} seconds.".format(
                     response["path"], ms
                 ),
                 link_preview=True,
