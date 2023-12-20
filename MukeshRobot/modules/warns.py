@@ -46,7 +46,7 @@ from MukeshRobot.modules.sql import warns_sql as sql
 from MukeshRobot.modules.sql.approve_sql import is_approved
 
 WARN_HANDLER_GROUP = 9
-CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
+CURRENT_WARNING_FILTER_STRING = "<b>Filter peringatan terkini dalam obrolan ini:</b>\n"
 
 
 # Not async
@@ -222,7 +222,7 @@ def warn_user(update: Update, context: CallbackContext) -> str:
         else:
             return warn(chat.get_member(user_id).user, chat, reason, message, warner)
     else:
-        message.reply_text("That looks like an invalid User ID to me.")
+        message.reply_text("Sepertinya ID Pengguna tidak valid.")
     return ""
 
 
@@ -248,7 +248,7 @@ def reset_warns(update: Update, context: CallbackContext) -> str:
             f"<b>User:</b> {mention_html(warned.id, warned.first_name)}"
         )
     else:
-        message.reply_text("No user has been designated!")
+        message.reply_text("Saya tidak tahu siapa yang Anda bicarakan, Anda harus menunjuk seorang pengguna...!")
     return ""
 
 
@@ -278,7 +278,7 @@ def warns(update: Update, context: CallbackContext):
                 f"User has {num_warns}/{limit} warns, but no reasons for any of them.",
             )
     else:
-        update.effective_message.reply_text("This user doesn't have any warns!")
+        update.effective_message.reply_text("Pengguna ini tidak mendapat peringatan apa pun!")
 
 
 # Dispatcher handler stop - do not async
@@ -345,7 +345,7 @@ def remove_warn_filter(update: Update, context: CallbackContext):
     for filt in chat_filters:
         if filt == to_remove:
             sql.remove_warn_filter(chat.id, to_remove)
-            msg.reply_text("Okay, I'll stop warning people for that.")
+            msg.reply_text("Okay, saya akan berhenti memperingatkan orang-orang tentang hal itu.")
             raise DispatcherHandlerStop
 
     msg.reply_text(
@@ -358,7 +358,7 @@ def list_warn_filters(update: Update, context: CallbackContext):
     all_handlers = sql.get_chat_warn_triggers(chat.id)
 
     if not all_handlers:
-        update.effective_message.reply_text("No warning filters are active here!")
+        update.effective_message.reply_text("Tidak ada filter peringatan yang aktif di sini!")
         return
 
     filter_list = CURRENT_WARNING_FILTER_STRING
