@@ -24,7 +24,7 @@ from MukeshRobot.modules.log_channel import loggable
 
 def check_user(user_id: int, bot: Bot, chat: Chat) -> Optional[str]:
     if not user_id:
-        reply = "You don't seem to be referring to a user or the ID specified is incorrect.."
+        reply = "Sepertinya Anda tidak menyebut pengguna atau ID yang diberikan salah."
         return reply
 
     try:
@@ -83,13 +83,13 @@ def mute(update: Update, context: CallbackContext) -> str:
         bot.restrict_chat_member(chat.id, user_id, chat_permissions)
         bot.sendMessage(
             chat.id,
-            f"Muted <b>{html.escape(member.user.first_name)}</b> with no expiration date!",
+            f"Shhh... diam sekarang, <b>{html.escape(member.user.first_name)}</b> dibisukan!",
             parse_mode=ParseMode.HTML,
         )
         return log
 
     else:
-        message.reply_text("This user is already muted!")
+        message.reply_text("Pengguna ini sudah dibisukan sebelumnya!")
 
     return ""
 @connection_status
@@ -122,7 +122,7 @@ def dmute(update: Update, context: CallbackContext) -> str:
     )
 
     if reason:
-        log += f"\n<b>Reason:</b> {reason}"
+        log += f"\n<b>Alasan:</b> {reason}"
 
     if member.can_send_messages is None or member.can_send_messages:
         chat_permissions = ChatPermissions(can_send_messages=False)
@@ -179,7 +179,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
                 pass
             bot.sendMessage(
                 chat.id,
-                f"I shall allow <b>{html.escape(member.user.first_name)}</b> to text!",
+                f"<b>{html.escape(member.user.first_name)}</b> sudah bisa berbicara dengan bebas!",
                 parse_mode=ParseMode.HTML,
             )
             return (
@@ -252,7 +252,7 @@ def temp_mute(update: Update, context: CallbackContext) -> str:
             )
             bot.sendMessage(
                 chat.id,
-                f"Muted <b>{html.escape(member.user.first_name)}</b> for {time_val}!",
+                f"Dibisukan <b>{html.escape(member.user.first_name)}</b> untuk {time_val}!",
                 parse_mode=ParseMode.HTML,
             )
             return log
