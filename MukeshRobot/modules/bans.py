@@ -316,7 +316,7 @@ def unban(update: Update, context: CallbackContext) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("ɪ ᴅᴏᴜʙᴛ ᴛʜᴀᴛ's ᴀ ᴜsᴇʀ.")
+        message.reply_text("Saya tidak tahu siapa yang Anda bicarakan, Anda harus menunjuk seorang pengguna...!")
         return log_message
 
     try:
