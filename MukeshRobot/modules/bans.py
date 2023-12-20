@@ -109,7 +109,7 @@ def ban(update: Update, context: CallbackContext) -> str:
 
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         reply = (
-            f"<code>⚠️</code><b>  ᴜꜱᴇʀ ᴅɪʙʟᴏᴋɪʀ</b>\n"
+            f"<code>⚠️</code><b> ᴜꜱᴇʀ ᴅɪʙʟᴏᴋɪʀ</b>\n"
             f"<code> </code><b>•  ᴅɪʙʟᴏᴋɪʀ ᴏʟᴇʜ:</b> {mention_html(user.id, user.first_name)}\n"
             f"<code> </code><b>•  ᴜsᴇʀ:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
         )
@@ -266,7 +266,7 @@ def kick(update: Update, context: CallbackContext) -> str:
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         bot.sendMessage(
             chat.id,
-            f"One Kicked! {mention_html(member.user.id, html.escape(member.user.first_name))}.",
+            f"Saya sudah menendang {mention_html(member.user.id, html.escape(member.user.first_name))}.",
             parse_mode=ParseMode.HTML,
         )
         log = (
@@ -335,7 +335,7 @@ def unban(update: Update, context: CallbackContext) -> str:
         return log_message
 
     chat.unban_member(user_id)
-    message.reply_text("Yep, this user can join!")
+    message.reply_text("Baiklah, mereka dapat bergabung lagi.")
 
     log = (
         f"<b>{html.escape(chat.title)}:</b>\n"
