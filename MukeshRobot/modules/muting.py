@@ -89,7 +89,7 @@ def mute(update: Update, context: CallbackContext) -> str:
         return log
 
     else:
-        message.reply_text("Pengguna ini dibisukan.")
+        message.reply_text("Shhh... diam sekarang. Pengguna ini dibisukan.")
 
     return ""
 @connection_status
