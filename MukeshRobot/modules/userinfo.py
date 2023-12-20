@@ -139,7 +139,7 @@ def get_id(update: Update, context: CallbackContext):
 
             user = bot.get_chat(user_id)
             msg.reply_text(
-                f"{html.escape(user.first_name)} ɪᴅ ᴋᴀᴍᴜ <code>{user.id}</code>.",
+                f"ID {html.escape(user.first_name)} adalah: <code>{user.id}</code>.",
                 parse_mode=ParseMode.HTML,
             )
 
@@ -147,12 +147,12 @@ def get_id(update: Update, context: CallbackContext):
 
         if chat.type == "private":
             msg.reply_text(
-                f"ᴜꜱᴇʀ ɪᴅ ᴍᴜ <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
+                f"ID kamu adalah: <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
             )
 
         else:
             msg.reply_text(
-                f"ɢʀᴏᴜᴩ ɪᴅ <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
+                f"ID group ini adalah: <code>{chat.id}</code>.", parse_mode=ParseMode.HTML
             )
 
 
