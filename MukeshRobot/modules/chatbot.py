@@ -87,7 +87,7 @@ def mukeshadd(update: Update, context: CallbackContext) -> str:
 @gloggable
 def mukesh(update: Update, context: CallbackContext):
     message = update.effective_message
-    msg = "• ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ"
+    msg = "• ᴘɪʟɪʜ ᴏᴘꜱɪ ᴜɴᴛᴜᴋ ᴇɴᴀʙʟᴇ/ᴅɪꜱᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ"
     keyboard = InlineKeyboardMarkup(
         [
             [
