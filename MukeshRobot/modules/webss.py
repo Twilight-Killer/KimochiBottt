@@ -45,7 +45,7 @@ async def eor(msg: Message, **kwargs):
 @app.on_message(filters.command(["webss", "ss", "webshot"]))
 async def take_ss(_, message: Message):
     if len(message.command) < 2:
-        return await eor(message, text="ɢɪᴠᴇ ᴀ ᴜʀʟ ᴛᴏ ғᴇᴛᴄʜ sᴄʀᴇᴇɴsʜᴏᴛ.")
+        return await eor(message, text="Berikan url untuk mengambil tangkapan layar.")
 
     if len(message.command) == 2:
         url = message.text.split(None, 1)[1]
@@ -59,16 +59,16 @@ async def take_ss(_, message: Message):
             "true",
         ]
     else:
-        return await eor(message, text="ɪɴᴠᴀʟɪᴅ ᴄᴏᴍᴍᴀɴᴅ.")
+        return await eor(message, text="perintah tidak valid.")
 
-    m = await eor(message, text="ᴄᴀᴘᴛᴜʀɪɴɢ sᴄʀᴇᴇɴsʜᴏᴛ...")
+    m = await eor(message, text="Mengambil tangkapan layar...")
 
     try:
         photo = await take_screenshot(url, full)
         if not photo:
-            return await m.edit("ғᴀɪʟᴇᴅ ᴛᴏ ᴛᴀᴋᴇ sᴄʀᴇᴇɴsʜᴏᴛ.")
+            return await m.edit("Gagal mengambil tangkapan layar.")
 
-        m = await m.edit("ᴜᴘʟᴏᴀᴅɪɴɢ...")
+        m = await m.edit("Mengunggah...")
 
         if not full:
             await message.reply_document(photo)
