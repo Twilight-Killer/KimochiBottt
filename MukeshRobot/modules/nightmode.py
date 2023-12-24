@@ -65,24 +65,24 @@ openhehe = ChatBannedRights(
     change_info=False,
 )
 button_row = [
-        [Button.url('Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ', f'https://t.me/{BOT_USERNAME}?startgroup=new')]
+        [Button.url('ᴛᴀᴍʙᴀʜᴋᴀɴ ꜱᴀʏᴀ ᴋᴇ ɢʀᴏᴜᴘ', f'https://t.me/{BOT_USERNAME}?startgroup=new')]
     ]
 @register(pattern="^/nightmode")
 async def close_ws(event):
     if event.is_group:
         if not (await is_register_admin(event.input_chat, event.message.sender_id)):
-            await event.reply("🤦🏻‍♂️ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ꜱᴏ ʏᴏᴜ ᴄᴀɴ'ᴛ ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ...")
+            await event.reply("ᴀɴᴅᴀ ʙᴜᴋᴀɴ ᴀᴅᴍɪɴ. ᴀɴᴅᴀ ᴛɪᴅᴀᴋ ᴅᴀᴘᴀᴛ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ᴘᴇʀɪɴᴛᴀʜ ɪɴɪ...")
             return
 
     if not event.is_group:
-        await event.reply("ʏᴏᴜ ᴄᴀɴ ᴏɴʟʏ ᴇɴᴀʙʟᴇ ɴɪɢʜᴛ ᴍᴏᴅᴇ ɪɴ ɢʀᴏᴜᴘꜱ.")
+        await event.reply("ᴀɴᴅᴀ ʜᴀɴʏᴀ ᴅᴀᴘᴀᴛ ᴍᴇɴɢᴀᴋᴛɪꜰᴋᴀɴ ɴɪɢʜᴛ ᴍᴏᴅᴇ ᴅᴀʟᴀᴍ ɢʀᴜᴘ.")
         return
     if is_nightmode_indb(str(event.chat_id)):
-        await event.reply("ᴛʜɪꜱ ᴄʜᴀᴛ ɪꜱ ʜᴀꜱ ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ ɴɪɢʜᴛ ᴍᴏᴅᴇ")
+        await event.reply("ᴏʙʀᴏʟᴀɴ ɪɴɪ ᴛᴇʟᴀʜ ᴍᴇɴɢᴀᴋᴛɪꜰᴋᴀɴ ɴɪɢʜᴛ ᴍᴏᴅᴇ.")
         return
     add_nightmode(str(event.chat_id))
     await event.reply(
-        f"​ᴀᴅᴅᴇᴅ ᴄʜᴀᴛ​ ​​: {event.chat.title} \n​ɪᴅ​: {event.chat_id} ᴛᴏ ᴅᴀᴛᴀʙᴀꜱᴇ. \n**ᴛʜɪꜱ ɢʀᴏᴜᴘ ᴡɪʟʟ ʙᴇ ᴄʟᴏꜱᴇᴅ ᴏɴ 12ᴀᴍ(ɪꜱᴛ) ᴀɴᴅ ᴡɪʟʟ ᴏᴘᴇɴᴇᴅ ᴏɴ 06ᴀᴍ(ɪꜱᴛ)**",
+        f"​​ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ᴏʙʀᴏʟᴀɴ ​​: {event.chat.title} \n​ɪᴅ​: {event.chat_id} ᴋᴇ ᴅᴀᴛᴀʙᴀꜱᴇ. \n**ɢʀᴏᴜᴘ ɪɴɪ ᴀᴋᴀɴ ᴅɪᴛᴜᴛᴜᴘ ᴘᴀᴅᴀ ᴊᴀᴍ 12 ᴀᴍ(ɪꜱᴛ) ᴅᴀɴ ᴀᴋᴀɴ ᴅɪʙᴜᴋᴀ ᴘᴀᴅᴀ ᴊᴀᴍ 06 ᴀᴍ(ɪꜱᴛ)**",
        buttons=button_row )
 
 
@@ -90,18 +90,18 @@ async def close_ws(event):
 async def disable_ws(event):
     if event.is_group:
         if not (await is_register_admin(event.input_chat, event.message.sender_id)):
-            await event.reply("🤦🏻‍♂️ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ꜱᴏ ʏᴏᴜ ᴄᴀɴ'ᴛ ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ..")
+            await event.reply("ᴀɴᴅᴀ ʙᴜᴋᴀɴ ᴀᴅᴍɪɴ. ᴀɴᴅᴀ ᴛɪᴅᴀᴋ ᴅᴀᴘᴀᴛ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ᴘᴇʀɪɴᴛᴀʜ ɪɴɪ...")
             return
 
     if not event.is_group:
-        await event.reply("ʏᴏᴜ ᴄᴀɴ ᴏɴʟʏ ᴅɪꜱᴀʙʟᴇ ɴɪɢʜᴛ ᴍᴏᴅᴇ ɪɴ ɢʀᴏᴜᴘꜱ.")
+        await event.reply("ᴀɴᴅᴀ ʜᴀɴʏᴀ ᴅᴀᴘᴀᴛ ᴍᴇɴᴏɴᴀᴋᴛɪꜰᴋᴀɴ ɴɪɢʜᴛ ᴍᴏᴅᴇ ᴅᴀʟᴀᴍ ɢʀᴜᴘ.")
         return
     if not is_nightmode_indb(str(event.chat_id)):
-        await event.reply("ᴛʜɪꜱ ᴄʜᴀᴛ ɪꜱ ​ɴᴏᴛ ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ ɴɪɢʜᴛ ᴍᴏᴅᴇ")
+        await event.reply("ᴏʙʀᴏʟᴀɴ ɪɴɪ ʙᴇʟᴜᴍ ᴍᴇɴɢᴀᴋᴛɪꜰᴋᴀɴ ɴɪɢʜᴛ ᴍᴏᴅᴇ")
         return
     rmnightmode(str(event.chat_id))
     await event.reply(
-        f"ʀᴇᴍᴏᴠᴇᴅ ᴄʜᴀᴛ : {event.chat.title} \n​ɪᴅ​:  {event.chat_id} ꜰʀᴏᴍ ᴅᴀᴛᴀʙᴀꜱᴇ."
+        f"ᴍᴇɴɢʜᴀᴘᴜꜱ ᴏʙʀᴏʟᴀɴ : {event.chat.title} \n​ɪᴅ​:  {event.chat_id} ᴅᴀʀɪ ᴅᴀᴛᴀʙᴀꜱᴇ."
     )
 
 
@@ -113,14 +113,14 @@ async def job_close():
         try:
             await tbot.send_message(
                 int(warner.chat_id),
-                f"12:00 ᴀᴍ, ɢʀᴏᴜᴘ ɪꜱ ᴄʟᴏꜱɪɴɢ ᴛɪʟʟ 6 ᴀᴍ.\n ɴɪɢʜᴛ ᴍᴏᴅᴇ ꜱᴛᴀʀᴛᴇᴅ ! \n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**",buttons=button_row)
+                f"12:00 ᴀᴍ, ɢʀᴜᴘ ᴛᴜᴛᴜᴘ ꜱᴀᴍᴘᴀɪ ᴊᴀᴍ 6 ᴀᴍ.\n ɴɪɢʜᴛ ᴍᴏᴅᴇ ᴅɪᴍᴜʟᴀɪ ! \n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**",buttons=button_row)
             await tbot(
                 functions.messages.EditChatDefaultBannedRightsRequest(
                     peer=int(warner.chat_id), banned_rights=hehes
                 )
             )
         except Exception as e:
-            logger.info(f"ᴜɴᴀʙʟᴇ ᴛᴏ ᴄʟᴏꜱᴇ ɢʀᴏᴜᴘ {warner} - {e}")
+            logger.info(f"ᴛɪᴅᴀᴋ ᴅᴀᴘᴀᴛ ᴍᴇɴᴜᴛᴜᴘ ɢʀᴏᴜᴘ {warner} - {e}")
 
 
 # Run everyday at 12am
@@ -137,7 +137,7 @@ async def job_open():
         try:
             await tbot.send_message(
                 int(warner.chat_id),
-                f"06:00 ᴀᴍ, ɢʀᴏᴜᴘ ɪꜱ ᴏᴘᴇɴɪɴɢ.\n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**",
+                f"06:00 ᴀᴍ, ɢʀᴏᴜᴘ ᴅɪʙᴜᴋᴀ.\n**ᴘᴏᴡᴇʀᴇᴅ ʙʏ {BOT_NAME}**",
             )
             await tbot(
                 functions.messages.EditChatDefaultBannedRightsRequest(
@@ -145,7 +145,7 @@ async def job_open():
                 )
             )
         except Exception as e:
-            logger.info(f"ᴜɴᴀʙʟᴇ ᴛᴏ ᴏᴘᴇɴ ɢʀᴏᴜᴘ {warner.chat_id} - {e}")
+            logger.info(f"ᴛɪᴅᴀᴋ ᴅᴀᴘᴀᴛ ᴍᴇᴍʙᴜᴋᴀ ɢʀᴏᴜᴘ {warner.chat_id} - {e}")
 
 
 # Run everyday at 06
