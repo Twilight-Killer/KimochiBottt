@@ -165,7 +165,7 @@ def lock(update, context) -> str:
                     chat = dispatcher.bot.getChat(conn)
                     chat_id = conn
                     chat_name = chat.title
-                    text = "{} dikunci di {}!".format(ltype, chat_name)
+                    text = "{} berhasil dikunci di {}.".format(ltype, chat_name)
                 else:
                     if update.effective_message.chat.type == "private":
                         send_message(
@@ -176,7 +176,7 @@ def lock(update, context) -> str:
                     chat = update.effective_chat
                     chat_id = update.effective_chat.id
                     chat_name = update.effective_message.chat.title
-                    text = "Locked {} for non-admins!".format(ltype)
+                    text = "{} berhasil dikunci dalam group ini.".format(ltype)
                 sql.update_lock(chat.id, ltype, locked=True)
                 send_message(update.effective_message, text, parse_mode="markdown")
 
@@ -198,7 +198,7 @@ def lock(update, context) -> str:
                     chat = dispatcher.bot.getChat(conn)
                     chat_id = conn
                     chat_name = chat.title
-                    text = "{} dikunci di {}!".format(
+                    text = "{} berhasil dikunci di {}.".format(
                         ltype, chat_name
                     )
                 else:
@@ -211,7 +211,7 @@ def lock(update, context) -> str:
                     chat = update.effective_chat
                     chat_id = update.effective_chat.id
                     chat_name = update.effective_message.chat.title
-                    text = "{} dikunci!".format(ltype)
+                    text = "{} berhasil dikunci.".format(ltype)
 
                 current_permission = context.bot.getChat(chat_id).permissions
                 context.bot.set_chat_permissions(
@@ -237,10 +237,10 @@ def lock(update, context) -> str:
             else:
                 send_message(
                     update.effective_message,
-                    "Apa yang kamu coba kunci? Gunakan /locktypes untuk daftar list yang dapat dikunci",
+                    "Apa yang kamu coba lock? Gunakan /locktypes untuk daftar list yang dapat di lock",
                 )
         else:
-            send_message(update.effective_message, "Apa yang kamu coba kunci?")
+            send_message(update.effective_message, "Apa yang ingin kamu lock?")
 
     else:
         send_message(
@@ -269,7 +269,7 @@ def unlock(update, context) -> str:
                     chat = dispatcher.bot.getChat(conn)
                     chat_id = conn
                     chat_name = chat.title
-                    text = "{} dibuka di {}!".format(ltype, chat_name)
+                    text = "{} berhasil dibuka di {}.".format(ltype, chat_name)
                 else:
                     if update.effective_message.chat.type == "private":
                         send_message(
@@ -280,7 +280,7 @@ def unlock(update, context) -> str:
                     chat = update.effective_chat
                     chat_id = update.effective_chat.id
                     chat_name = update.effective_message.chat.title
-                    text = "{} dibuka!".format(ltype)
+                    text = "{} berhasil dibuka!".format(ltype)
                 sql.update_lock(chat.id, ltype, locked=False)
                 send_message(update.effective_message, text, parse_mode="markdown")
                 return (
@@ -301,7 +301,7 @@ def unlock(update, context) -> str:
                     chat = dispatcher.bot.getChat(conn)
                     chat_id = conn
                     chat_name = chat.title
-                    text = "{} dibuka di {}!".format(ltype, chat_name)
+                    text = "{} berhasil dibuka di {}!".format(ltype, chat_name)
                 else:
                     if update.effective_message.chat.type == "private":
                         send_message(
@@ -347,11 +347,11 @@ def unlock(update, context) -> str:
             else:
                 send_message(
                     update.effective_message,
-                    "Apa yang kamu coba buka kunci? Gunakan /locktypes untuk daftar list yang dapat dibuka kunci.",
+                    "Apa yang ingin kamu unlock? Gunakan /locktypes untuk daftar list yang dapat di unlock.",
                 )
 
         else:
-            send_message(update.effective_message, "Apa yang kamu coba buka kunci?")
+            send_message(update.effective_message, "Apa yang ingin kamu unlock?")
 
     return ""
 
