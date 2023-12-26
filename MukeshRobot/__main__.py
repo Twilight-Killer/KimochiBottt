@@ -476,7 +476,7 @@ def MukeshRobot_Main_Callback(update: Update, context: CallbackContext):
             ),
         )
     elif query.data=="basic_help":
-        query.message.edit_caption("""Bᴀsɪᴄ Cᴏᴍᴍᴀɴᴅs.
+        query.message.edit_caption("""ᴘᴇʀɪɴᴛᴀʜ ᴅᴀꜱᴀʀ.
 👮🏻Aᴠᴀɪʟᴀʙʟᴇ ᴛᴏ Aᴅᴍɪɴs & Mᴏᴅᴇʀᴀᴛᴏʀs.
 🕵🏻Aᴠᴀɪʟᴀʙʟᴇ ᴛᴏ Aᴅᴍɪɴs.
 
@@ -526,7 +526,7 @@ Pɪɴɴᴇᴅ Mᴇssᴀɢᴇs
             ),
             )                                        
     elif query.data=="advance_help":
-        query.message.edit_caption("""Aᴅᴠᴀɴᴄᴇᴅ Cᴏᴍᴍᴀɴᴅs
+        query.message.edit_caption("""ᴘᴇʀɪɴᴛᴀʜ ᴘʀᴏ
 
 👮🏻Aᴠᴀɪʟᴀʙʟᴇ ᴛᴏ Aᴅᴍɪɴs & Mᴏᴅᴇʀᴀᴛᴏʀs.
 🕵🏻Aᴠᴀɪʟᴀʙʟᴇ ᴛᴏ Aᴅᴍɪɴs.
