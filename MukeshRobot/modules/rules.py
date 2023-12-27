@@ -49,7 +49,7 @@ def send_rules(update, chat_id, from_pm=False, dest_chat=None):
             raise
 
     rules = sql.get_rules(chat_id)
-    text = f"The rules for *{escape_markdown(chat.title)}* are:\n\n{rules}"
+    text = f"Peraturan untuk *{escape_markdown(chat.title)}* adalah:\n\n{rules}"
 
     if from_pm and rules:
         bot.send_message(
@@ -122,7 +122,7 @@ def set_rules(update: Update, context: CallbackContext):
         )
 
         sql.set_rules(chat_id, markdown_rules)
-        update.effective_message.reply_text("Berhasil mengatur rules untuk grup ini.")
+        update.effective_message.reply_text("Berhasil mengatur aturan untuk grup ini.")
     else:
         update.effective_message.reply_text("Tidak ada rules?")
 
@@ -132,7 +132,7 @@ def set_rules(update: Update, context: CallbackContext):
 def clear_rules(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     sql.set_rules(chat_id, "")
-    update.effective_message.reply_text("Berhasil menghapus rules!")
+    update.effective_message.reply_text("Berhasil menghapus aturan!")
 
 
 def __stats__():
@@ -150,7 +150,7 @@ def __migrate__(old_chat_id, new_chat_id):
 
 
 def __chat_settings__(chat_id, user_id):
-    return f"Obrolan ini telah menetapkan rules: `{bool(sql.get_rules(chat_id))}`"
+    return f"Obrolan ini telah menerapkan aturan: `{bool(sql.get_rules(chat_id))}`"
 
 
 __help__ = """
