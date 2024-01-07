@@ -3,7 +3,7 @@ from .. import pbot as Mukesh,BOT_NAME,BOT_USERNAME
 import time
 from pyrogram.enums import ChatAction, ParseMode
 from pyrogram import filters
-@Mukesh.on_message(filters.command(["chatgpt","Admin","admin"],  prefixes=["Admin", ".", "/", "-", "?", "$","#","admin"]))
+@Mukesh.on_message(filters.command(["chatgpt","dmin","ask"],  prefixes=["A", ".", "/", "-", "?", "$","#","a"]))
 async def chat(bot, message):
     
     try:
