@@ -87,7 +87,7 @@ def mukeshadd(update: Update, context: CallbackContext) -> str:
 @gloggable
 def mukesh(update: Update, context: CallbackContext):
     message = update.effective_message
-    msg = "• ᴘɪʟɪʜ ᴏᴘꜱɪ ᴜɴᴛᴜᴋ ᴇɴᴀʙʟᴇ/ᴅɪꜱᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ"
+    msg = "• ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ"
     keyboard = InlineKeyboardMarkup(
         [
             [
@@ -128,11 +128,10 @@ def chatbot(update: Update, context: CallbackContext):
         if not mukesh_message(context, message):
             return
         bot.send_chat_action(chat_id, action="typing")
-        url=f"https://fallenxbot.vercel.app/api/apikey=1696771874-fallen-cbxc99cxbc/group-controller/mukesh/message={message.text}"
-        response = requests.get(url)
-        out=response.json()
-        reply=out["reply"]
-        message.reply_text(reply)
+        url=f"https://mukesh-api.vercel.app/chatbot/{message.text}"
+        response = requests.get(url).json()["results"]
+        
+        message.reply_text(response)
 
 
 
