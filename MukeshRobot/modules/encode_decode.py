@@ -11,13 +11,13 @@ async def passwordgen(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
         if len(message.command) < 2:
             await message.reply_text(
-            "Contoh:**\n\n`/password <length>`")
+            "Example:**\n\n`/password <length>`")
         else:
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://mukesh-api.vercel.app/password/{a}') 
             x=response.json()["results"]
             
-            await message.reply_text(f" {x}", parse_mode=ParseMode.MARKDOWN)     
+            await message.reply_text(f"Here is your Password:- ` {x}`", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
 @Mukesh.on_message(filters.command(["morseencode"]))
@@ -28,16 +28,16 @@ async def morse_en(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
         if len(message.command) < 2:
             await message.reply_text(
-            "Contoh:**\n\n`/morseencode <query>`")
+            "Example:**\n\n`/morseencode <query>`")
         else:
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://mukesh-api.vercel.app/morse/encode/{a}') 
             x=response.json()["results"]
             
-            await message.reply_text(f" {x}", parse_mode=ParseMode.MARKDOWN)     
+            await message.reply_text(f"`{x}`", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
-@Mukesh.on_message(filters.command(["morsedecode"]))
+@Mukesh.on_message(filters.command("morsedecode"))
 async def morse_de(bot, message):
     
     try:
@@ -45,13 +45,13 @@ async def morse_de(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
         if len(message.command) < 2:
             await message.reply_text(
-            "Contoh:**\n\n`/morsedecode <query>`")
+            "Example:**\n\n`/morsedecode <query>`")
         else:
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://mukesh-api.vercel.app/morse/decode/{a}') 
             x=response.json()["results"]
             
-            await message.reply_text(f" {x}", parse_mode=ParseMode.MARKDOWN)     
+            await message.reply_text(f"`{x}`", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
 @Mukesh.on_message(filters.command(["encode"]))
@@ -62,13 +62,13 @@ async def base_en(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
         if len(message.command) < 2:
             await message.reply_text(
-            "Contoh:**\n\n`/encode <query>`")
+            "Example:**\n\n`/encode <query>`")
         else:
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://mukesh-api.vercel.app/base/encode/{a}') 
             x=response.json()["results"]
             
-            await message.reply_text(f" {x}", parse_mode=ParseMode.MARKDOWN)     
+            await message.reply_text(f"` {x}`", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
 @Mukesh.on_message(filters.command(["decode"]))
@@ -79,12 +79,12 @@ async def base_de(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
         if len(message.command) < 2:
             await message.reply_text(
-            "Contoh:**\n\n`/decode <query>`")
+            "Example:**\n\n`/decode <query>`")
         else:
             a = message.text.split(' ', 1)[1]
             response = requests.get(f'https://mukesh-api.vercel.app/base/decode/{a}') 
             x=response.json()["results"]
             
-            await message.reply_text(f" {x}", parse_mode=ParseMode.MARKDOWN)     
+            await message.reply_text(f" `{x}`", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")                                
